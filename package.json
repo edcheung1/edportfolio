@@ -1,6 +1,9 @@
 {
   "name": "edportfolio",
   "version": "1.0.0",
+	"engines": {
+		"node": "4.1.1"
+	}
   "description": "Ed's Portfolio Site",
   "main": "server.js",
   "scripts": {
@@ -9,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edcheung1/fcc-basejump-headerParser.git"
+    "url": "git+https://github.com/edcheung1/edportfolio.git"
   },
   "author": "Edward Cheung <echeung1991@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/edcheung1/fcc-basejump-headerParser/issues"
+    "url": "https://github.com/edcheung1/edportfolio/issues"
   },
-  "homepage": "https://github.com/edcheung1/fcc-basejump-headerParser#readme",
+  "homepage": "https://github.com/edcheung1/edportfolio#readme",
   "dependencies": {
     "express": "^4.13.3",
     "express-useragent": "^0.2.4"

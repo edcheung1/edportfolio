@@ -289,6 +289,8 @@ var ContactBox = React.createClass({
 
 var Main = React.createClass({
   render: function() {
+		console.log('Main react class loaded');
+		
     const navbarInstance = (
       <Navbar inverse fixedTop>
         <Navbar.Header>
