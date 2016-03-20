@@ -3,7 +3,7 @@
   "version": "1.0.0",
 	"engines": {
 		"node": "4.1.1"
-	}
+	},
   "description": "Ed's Portfolio Site",
   "main": "server.js",
   "scripts": {
