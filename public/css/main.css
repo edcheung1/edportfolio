@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand);
 
-@import url(https://fonts.googleapis.com/css?family=Quicksand);
 body {
   padding-top: 20px;
   background-color: #DDD;
@@ -137,7 +136,7 @@ a.darken img {
 }
 
 .project-slideup {
-  animation: slide-up-keyframes 1s;
+  /* animation: slide-up-keyframes 1s; */
 }
 
 @keyframes slide-up-keyframes {
@@ -195,4 +194,26 @@ a.darken img {
 
 #contact-box a:hover {
   color: #888;
+}
+
+.example-enter {
+  opacity: 0.01;
+	transform: translate(0, 50px);
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+	transform: translate(0, 0);
+  transition: opacity 500ms ease-in, transform 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+	transform: translate(0, 0);
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+	transform: translate(0, 50px);
+  transition: opacity 300ms ease-in, transform 500ms ease-in;
 }

@@ -1,3 +1,8 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
+var ReactBootstrap = require('react-bootstrap');
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
 var allProjects = [
   {title: 'Simon', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', desc: 'A remake of the classic Simon® game, test your memory and reflexes and try to reach a score of 20! Activate strict mode to make the game reset completely on a mistake, or deactivate it so it continues where you left off.', date: '1/5/16', tags: ['fav', 'front']},
   {title: 'Recipe Box', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link:
@@ -93,26 +98,9 @@ var AboutBox = React.createClass({
 var ProjectBox = React.createClass({
   getInitialState: function() {
      return {
-       projectList: allProjects
+       projectList: []
      }
   },
-  
-//   showProjects: function(numProjects) {
-//     if(projectsShown < allProjects.length) {           
-//       $('.btn-group').animate({
-//         top: "+=162px"
-//       }, 750, function() {
-//         var newList = this.state.projectList;
-//         newList = newList.concat(allProjects.slice(projectsShown, projectsShown + numProjects));
-//         projectsShown += numProjects;
-        
-//         $('.btn-group').css("top", "10px");
-//         this.setState({
-//           projectList: newList
-//         });
-//       }.bind(this));
-//     }
-//   },
   
   sortDate: function() {
     var sortedProjects = this.state.projectList.sort(compareDate);
@@ -123,6 +111,10 @@ var ProjectBox = React.createClass({
   },
   
   setFilter: function(filter, e) {
+		this.setState({
+			projectList: []
+		});
+		
     $('#portfolio-menu').children().css('color', '#333');    
     if(typeof e !== 'undefined') {
       e.currentTarget.style.color = 'orange';
@@ -133,6 +125,7 @@ var ProjectBox = React.createClass({
         return $.inArray(filter, project.tags) > -1;      
       });      
     }    
+		
     this.setState({
       projectList: filteredList        
     });
@@ -247,7 +240,9 @@ var ProjectRow = React.createClass({
        
     return (
       <div>
-        {projectList}
+				<ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+					{projectList}
+				</ReactCSSTransitionGroup>
         <Modal
           show={this.state.showModal}
           onHide={this.closeModal} >
@@ -289,8 +284,6 @@ var ContactBox = React.createClass({
 
 var Main = React.createClass({
   render: function() {
-		console.log('Main react class loaded');
-		
     const navbarInstance = (
       <Navbar inverse fixedTop>
         <Navbar.Header>
