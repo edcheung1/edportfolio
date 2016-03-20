@@ -1,0 +1,26 @@
+{
+  "name": "headerparser",
+  "version": "1.0.0",
+  "description": "\"FCC Basejump: Header Parser Microservice\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edcheung1/fcc-basejump-headerParser.git"
+  },
+  "author": "Edward Cheung <echeung1991@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edcheung1/fcc-basejump-headerParser/issues"
+  },
+  "homepage": "https://github.com/edcheung1/fcc-basejump-headerParser#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-useragent": "^0.2.4",
+    "react": "^0.14.7"
+  },
+  "devDependencies": {}
+}

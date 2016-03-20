@@ -1,0 +1,14 @@
+body {
+  background-color: #AAA;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+.example {
+  opacity: 0.01;
+  transition: opacity 1s ease-in;
+}
