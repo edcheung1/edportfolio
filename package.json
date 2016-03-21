@@ -8,7 +8,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+		"build-js": "browserify -t reactify public/app.jsx > public/bundle.js",
+		"watch-js": "watchify -t reactify public/app.jsx -o public/bundle.js -v"
   },
   "repository": {
     "type": "git",
