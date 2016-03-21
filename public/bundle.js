@@ -35837,10 +35837,11 @@ var ReactBootstrap = require('react-bootstrap');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var allProjects = [
+	{title: 'My Portfolio', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458516387/Ed_Portfolio_hd1rck.png', link: 'http://edcheung-portfolio.herokuapp.com/', git: 'https://github.com/edcheung1/edportfolio', date:'3/25/16', tags: ['fav', 'full']},
   {title: 'Simon', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', desc: 'A remake of the classic Simon® game, test your memory and reflexes and try to reach a score of 20! Activate strict mode to make the game reset completely on a mistake, or deactivate it so it continues where you left off.', date: '1/5/16', tags: ['fav', 'front']},
   {title: 'Recipe Box', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link:
   'http://codepen.io/edcheung/pen/bExZzv', date: '2/17/16', tags: ['fav', 'front']},
-  {title: 'MongoMart', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'back']},
+  {title: 'MongoMart', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'full']},
   {title: 'Worm Game', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191409/Ed_JavaWorm_n1igtk.png', date: '10/27/15', tags: ['fav', 'other']},
   {title: 'Game of Life', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191410/Ed_GameOfLifeJava_lzwakq.png', date: '10/10/15', tags: ['other']},
   {title: 'GDP Data Visualization', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['fav', 'data']},
@@ -35857,8 +35858,8 @@ var allProjects = [
   {title: 'Header Parser Microservice', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457921199/Ed_HeaderParser_ex6ffo.png', link: 'https://edcheung-fcc-headerparser.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-headerParser', date: '1/17/16', tags: ['back']},
   {title: 'URL Shortener Microservice', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457998163/Ed_UrlShortener_mxhhzo.png', link: 'https://edcheung-fcc-urlshortener.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-urlshortener', date: '1/15/16', tags: ['back']},
   {title: 'Image Search Abstraction Layer', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458188556/Ed_ImageSearch_suve2e.png', link: 'https://edcheung-fcc-imgsearch.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-imagesearch', date: '1/25/16', tags: ['back']},
-  {title: 'File Metadata Microservice', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back']}  
-  
+  {title: 'File Metadata Microservice', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back']}
+	
 ];
 
 var projectsShown = 0;
@@ -35931,7 +35932,7 @@ var AboutBox = React.createClass({displayName: "AboutBox",
 var ProjectBox = React.createClass({displayName: "ProjectBox",
   getInitialState: function() {
      return {
-       projectList: []
+       projectList: allProjects
      }
   },
   
@@ -35944,13 +35945,14 @@ var ProjectBox = React.createClass({displayName: "ProjectBox",
   },
   
   setFilter: function(filter, e) {
-		this.setState({
-			projectList: []
-		});
+		// this.setState({
+			// projectList: []
+		// });
 		
-    $('#portfolio-menu').children().css('color', '#333');    
+    $('#portfolio-menu').children().removeClass('portfolio-menu-select').css('color', '#333');    
     if(typeof e !== 'undefined') {
-      e.currentTarget.style.color = 'orange';
+      // e.currentTarget.style.color = 'orange';
+			$(e.currentTarget).addClass('portfolio-menu-select');
     }    
     var filteredList = allProjects;
     if(filter != 'all') {      
@@ -35959,14 +35961,15 @@ var ProjectBox = React.createClass({displayName: "ProjectBox",
       });      
     }    
 		
-    this.setState({
-      projectList: filteredList        
-    });
+		this.setState({
+			projectList: filteredList        
+		});	
+    
   },
   
   componentDidMount: function() {    
     this.setFilter('fav');
-    $('#portfolio-menu div:first-child').css('color', 'orange');
+    $('#portfolio-menu div').first().addClass('portfolio-menu-select');
   },
   
   render: function() {    
@@ -35976,22 +35979,39 @@ var ProjectBox = React.createClass({displayName: "ProjectBox",
           React.createElement("h3", null, "Portfolio"), 
           React.createElement("div", {id: "portfolio-menu"}, 
             React.createElement("div", {onClick: this.setFilter.bind(this, 'fav')}, 
-              React.createElement("i", {className: "fa fa-heart fa-fw"}), React.createElement("span", null, "My Favorites")
+							React.createElement("div", null, 
+								React.createElement("i", {className: "fa fa-heart fa-fw"}), React.createElement("span", null, " My Favorites")
+							)
             ), 
             React.createElement("div", {onClick: this.setFilter.bind(null,'front')}, 
-              React.createElement("i", {className: "fa fa-desktop fa-fw"}), React.createElement("span", null, "Front-End")
+							React.createElement("div", null, 
+								React.createElement("i", {className: "fa fa-desktop fa-fw"}), React.createElement("span", null, " Front-End")
+							)
             ), 
             React.createElement("div", {onClick: this.setFilter.bind(null,'back')}, 
-              React.createElement("i", {className: "fa fa-database fa-fw"}), "Back-End"
+							React.createElement("div", null, 
+								React.createElement("i", {className: "fa fa-database fa-fw"}), React.createElement("span", null, " Back-End")
+							)
+            ), 
+						React.createElement("div", {onClick: this.setFilter.bind(null,'full')}, 
+							React.createElement("div", null, 
+								React.createElement("i", {className: "fa fa-exchange fa-fw"}), React.createElement("span", null, " Full-Stack")
+							)
             ), 
             React.createElement("div", {onClick: this.setFilter.bind(null,'data')}, 
-              React.createElement("i", {className: "fa fa-bar-chart fa-fw"}), React.createElement("span", null, "Data Visualization")
+							React.createElement("div", null, 
+								React.createElement("i", {className: "fa fa-bar-chart fa-fw"}), React.createElement("span", null, " Data Visualization")
+							)
             ), 
             React.createElement("div", {onClick: this.setFilter.bind(null,'other')}, 
-              React.createElement("i", {className: "fa fa-cogs fa-fw"}), React.createElement("span", null, " Other")
+							React.createElement("div", null, 
+								React.createElement("i", {className: "fa fa-cogs fa-fw"}), React.createElement("span", null, " Other")
+							)
             ), 
             React.createElement("div", {onClick: this.setFilter.bind(this,'all')}, 
-              React.createElement("i", {className: "fa fa-asterisk fa-fw"}), React.createElement("span", null, " All")
+							React.createElement("div", null, 
+								React.createElement("i", {className: "fa fa-asterisk fa-fw"}), React.createElement("span", null, " All")
+							)
             )
           ), 
           React.createElement("div", {className: "container"}, 

@@ -96,18 +96,24 @@ h1 {
   position: absolute;
   text-align: left;
   display: inline-block;
-  top: 3em;
+  top: 1em;
   left: 0;
   z-index: 11;
+	min-width: 17em;
+	color: #333;
 }
 
 #portfolio-menu > div {
-  padding: 0.25em;
-  font-size: 1.5em;
-  cursor: pointer;
+	width: 100%;
 }
 
-#portfolio-menu > div:hover {
+#portfolio-menu > div > div {	
+	padding: 0.25em;
+  font-size: 1.5em;
+  cursor: pointer;	
+}
+
+#portfolio-menu > div:hover  {
   background-color: rgba(150, 150, 150, 0.75);
 }
 
@@ -115,8 +121,17 @@ h1 {
   display: none;
 }
 
-#portfolio-menu > div:hover > span {
+#portfolio-menu > div:hover > div > span {
   display: inline-block;
+}
+
+.portfolio-menu-select > div {
+	background-color: rgba(150, 150, 150, 0.75);
+	color: orange;	
+}
+
+.portfolio-menu-select > div > span {
+	display: inline-block !important;
 }
 
 a.darken {

@@ -4,10 +4,11 @@ var ReactBootstrap = require('react-bootstrap');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var allProjects = [
+	{title: 'My Portfolio', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458516387/Ed_Portfolio_hd1rck.png', link: 'http://edcheung-portfolio.herokuapp.com/', git: 'https://github.com/edcheung1/edportfolio', date:'3/25/16', tags: ['fav', 'full']},
   {title: 'Simon', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', desc: 'A remake of the classic Simon® game, test your memory and reflexes and try to reach a score of 20! Activate strict mode to make the game reset completely on a mistake, or deactivate it so it continues where you left off.', date: '1/5/16', tags: ['fav', 'front']},
   {title: 'Recipe Box', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link:
   'http://codepen.io/edcheung/pen/bExZzv', date: '2/17/16', tags: ['fav', 'front']},
-  {title: 'MongoMart', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'back']},
+  {title: 'MongoMart', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'full']},
   {title: 'Worm Game', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191409/Ed_JavaWorm_n1igtk.png', date: '10/27/15', tags: ['fav', 'other']},
   {title: 'Game of Life', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191410/Ed_GameOfLifeJava_lzwakq.png', date: '10/10/15', tags: ['other']},
   {title: 'GDP Data Visualization', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['fav', 'data']},
@@ -24,8 +25,8 @@ var allProjects = [
   {title: 'Header Parser Microservice', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457921199/Ed_HeaderParser_ex6ffo.png', link: 'https://edcheung-fcc-headerparser.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-headerParser', date: '1/17/16', tags: ['back']},
   {title: 'URL Shortener Microservice', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457998163/Ed_UrlShortener_mxhhzo.png', link: 'https://edcheung-fcc-urlshortener.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-urlshortener', date: '1/15/16', tags: ['back']},
   {title: 'Image Search Abstraction Layer', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458188556/Ed_ImageSearch_suve2e.png', link: 'https://edcheung-fcc-imgsearch.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-imagesearch', date: '1/25/16', tags: ['back']},
-  {title: 'File Metadata Microservice', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back']}  
-  
+  {title: 'File Metadata Microservice', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back']}
+	
 ];
 
 var projectsShown = 0;
@@ -98,7 +99,7 @@ var AboutBox = React.createClass({
 var ProjectBox = React.createClass({
   getInitialState: function() {
      return {
-       projectList: []
+       projectList: allProjects
      }
   },
   
@@ -110,14 +111,11 @@ var ProjectBox = React.createClass({
     ascending = !ascending;
   },
   
-  setFilter: function(filter, e) {
-		this.setState({
-			projectList: []
-		});
-		
-    $('#portfolio-menu').children().css('color', '#333');    
+  setFilter: function(filter, e) {		
+    $('#portfolio-menu').children().removeClass('portfolio-menu-select').css('color', '#333');    
     if(typeof e !== 'undefined') {
-      e.currentTarget.style.color = 'orange';
+      // e.currentTarget.style.color = 'orange';
+			$(e.currentTarget).addClass('portfolio-menu-select');
     }    
     var filteredList = allProjects;
     if(filter != 'all') {      
@@ -126,14 +124,15 @@ var ProjectBox = React.createClass({
       });      
     }    
 		
-    this.setState({
-      projectList: filteredList        
-    });
+		this.setState({
+			projectList: filteredList        
+		});	
+    
   },
   
   componentDidMount: function() {    
     this.setFilter('fav');
-    $('#portfolio-menu div:first-child').css('color', 'orange');
+    $('#portfolio-menu div').first().addClass('portfolio-menu-select');
   },
   
   render: function() {    
@@ -143,22 +142,39 @@ var ProjectBox = React.createClass({
           <h3>Portfolio</h3>
           <div id="portfolio-menu">
             <div onClick={this.setFilter.bind(this, 'fav')}>
-              <i className='fa fa-heart fa-fw' /><span>My Favorites</span>
+							<div>
+								<i className='fa fa-heart fa-fw' /><span>&nbsp;My Favorites</span>
+							</div>
             </div>
             <div onClick={this.setFilter.bind(null,'front')}>
-              <i className="fa fa-desktop fa-fw" /><span>Front-End</span>
+							<div>
+								<i className="fa fa-desktop fa-fw" /><span>&nbsp;Front-End</span>
+							</div>
             </div>
             <div onClick={this.setFilter.bind(null,'back')}>
-              <i className="fa fa-database fa-fw" />Back-End
+							<div>
+								<i className="fa fa-database fa-fw" /><span>&nbsp;Back-End</span>
+							</div>
+            </div>
+						<div onClick={this.setFilter.bind(null,'full')}>
+							<div>
+								<i className="fa fa-exchange fa-fw" /><span>&nbsp;Full-Stack</span>
+							</div>
             </div>
             <div onClick={this.setFilter.bind(null,'data')}>
-              <i className="fa fa-bar-chart fa-fw" /><span>Data Visualization</span>
+							<div>
+								<i className="fa fa-bar-chart fa-fw" /><span>&nbsp;Data Visualization</span>
+							</div>
             </div>
             <div onClick={this.setFilter.bind(null,'other')}>
-              <i className='fa fa-cogs fa-fw' /><span> Other</span>
+							<div>
+								<i className='fa fa-cogs fa-fw' /><span>&nbsp;Other</span>
+							</div>
             </div>
             <div onClick={this.setFilter.bind(this,'all')}>
-              <i className='fa fa-asterisk fa-fw' /><span> All</span>
+							<div>
+								<i className='fa fa-asterisk fa-fw' /><span>&nbsp;All</span>
+							</div>
             </div>
           </div>
           <div className="container">
