@@ -11,6 +11,11 @@ h1 {
   font-size: 5em;
 }
 
+.navAnchor {
+	position: absolute;
+	top: -5em;
+}
+
 #about-box {
   position: relative;
   height: 40em;
@@ -99,7 +104,7 @@ h1 {
   top: 1em;
   left: 0;
   z-index: 11;
-	min-width: 17em;
+	min-width: 13em;
 	color: #333;
 }
 
@@ -134,6 +139,12 @@ h1 {
 	display: inline-block !important;
 }
 
+.project-list-container {
+	/* padding: 0 2em 2em 0; */
+	padding-left: 3em;
+	padding-right: 3em;
+}
+
 a.darken {
   display: inline-block;
   background: black;
@@ -150,20 +161,6 @@ a.darken img {
   padding-bottom: 20px;
 }
 
-.project-slideup {
-  /* animation: slide-up-keyframes 1s; */
-}
-
-@keyframes slide-up-keyframes {
-  0% {
-    opacity: 0;
-    transform: translate(0px, 30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
 .project-title {
   position: relative;
   font-size: 16px;
@@ -198,6 +195,7 @@ a.darken img {
 }
 
 #contact-box {
+	position: relative;
   background-color: #222;
   color: #DDD;
   padding: 2em;

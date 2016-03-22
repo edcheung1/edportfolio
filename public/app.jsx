@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactBootstrap = require('react-bootstrap');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+var TimerMixin = require('react-timer-mixin');
 
 var allProjects = [
 	{title: 'My Portfolio', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458516387/Ed_Portfolio_hd1rck.png', link: 'http://edcheung-portfolio.herokuapp.com/', git: 'https://github.com/edcheung1/edportfolio', date:'3/25/16', tags: ['fav', 'full']},
@@ -52,23 +53,29 @@ var AboutBox = React.createClass({
     
     $('h3').children().css('text-decoration', '');
     $('#'+spanId).css('text-decoration', 'underline');
-    switch(spanId) {
-      case 'span-dev':
-        $('#about-bg').removeClass().addClass('style-bg dev-bg');
-        $('#profile-icon').removeClass().addClass('fa fa-code fa-lg');        
-        break;
-      case 'span-engr':
-        $('#about-bg').removeClass().addClass('style-bg engr-bg');
-        $('#profile-icon').removeClass().addClass('fa fa-cogs fa-lg');
-        break;
-      case 'span-data':
-        $('#about-bg').removeClass().addClass('style-bg data-bg');
-        $('#profile-icon').removeClass().addClass('fa fa-database fa-lg');
-        break;
-    };
-    $('.style-bg').stop(true).css('opacity', 0.75).animate({
-      opacity: 1
-    }, 500)
+		
+		$('.style-bg').stop(true).css('opacity', 1).animate({
+      opacity: .75
+    }, 150, function() {
+			switch(spanId) {
+				case 'span-dev':
+					$('#about-bg').removeClass().addClass('style-bg dev-bg');
+					$('#profile-icon').removeClass().addClass('fa fa-code fa-lg');									
+					break;
+				case 'span-engr':
+					$('#about-bg').removeClass().addClass('style-bg engr-bg');
+					$('#profile-icon').removeClass().addClass('fa fa-cogs fa-lg');
+					break;
+				case 'span-data':
+					$('#about-bg').removeClass().addClass('style-bg data-bg');
+					$('#profile-icon').removeClass().addClass('fa fa-database fa-lg');
+					break;
+			};
+			$('.style-bg').css('opacity', 0.75).animate({
+				opacity: 1
+			}, 500);	
+		});
+    
     this.setState({
       aboutState: spanId
     });    
@@ -77,6 +84,7 @@ var AboutBox = React.createClass({
   render: function() {
     return(
       <div id='about-box'>
+				<div className="navAnchor" id="about"></div>
         <div id='about-inner'>
           <div id='about-header'>
             <h1>ED CHEUNG</h1>
@@ -97,6 +105,7 @@ var AboutBox = React.createClass({
 })
 
 var ProjectBox = React.createClass({
+	mixins: [TimerMixin],
   getInitialState: function() {
      return {
        projectList: allProjects
@@ -112,22 +121,28 @@ var ProjectBox = React.createClass({
   },
   
   setFilter: function(filter, e) {		
-    $('#portfolio-menu').children().removeClass('portfolio-menu-select').css('color', '#333');    
-    if(typeof e !== 'undefined') {
-      // e.currentTarget.style.color = 'orange';
+		$('#portfolio-menu').children().removeClass('portfolio-menu-select').css('color', '#333');    
+		if(typeof e !== 'undefined') {
 			$(e.currentTarget).addClass('portfolio-menu-select');
-    }    
-    var filteredList = allProjects;
-    if(filter != 'all') {      
-      var filteredList = allProjects.filter(function(project) {
-        return $.inArray(filter, project.tags) > -1;      
-      });      
-    }    
+		};
 		
 		this.setState({
-			projectList: filteredList        
-		});	
-    
+			projectList: []
+		});
+
+		// Give 300ms for old filtered projects to leave
+		this.setTimeout(function() {			  
+			var filteredList = allProjects;
+			if(filter != 'all') {      
+				var filteredList = allProjects.filter(function(project) {
+					return $.inArray(filter, project.tags) > -1;      
+				});      
+			}    
+			
+			this.setState({
+				projectList: filteredList        
+			});			
+		}, 300);    
   },
   
   componentDidMount: function() {    
@@ -137,8 +152,8 @@ var ProjectBox = React.createClass({
   
   render: function() {    
     return(
-      <div>        
         <div id="portfolio-box">
+					<div className="navAnchor" id="portfolio"></div>
           <h3>Portfolio</h3>
           <div id="portfolio-menu">
             <div onClick={this.setFilter.bind(this, 'fav')}>
@@ -163,7 +178,7 @@ var ProjectBox = React.createClass({
             </div>
             <div onClick={this.setFilter.bind(null,'data')}>
 							<div>
-								<i className="fa fa-bar-chart fa-fw" /><span>&nbsp;Data Visualization</span>
+								<i className="fa fa-bar-chart fa-fw" /><span>&nbsp;Data Visuals</span>
 							</div>
             </div>
             <div onClick={this.setFilter.bind(null,'other')}>
@@ -184,7 +199,6 @@ var ProjectBox = React.createClass({
             <Button onClick={this.sortDate}>Sort by Date</Button>
           </div>
         </div>
-      </div>
     )
   }  
 });
@@ -255,7 +269,7 @@ var ProjectRow = React.createClass({
     }.bind(this));    
        
     return (
-      <div>
+      <div className='project-list-container'>
 				<ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
 					{projectList}
 				</ReactCSSTransitionGroup>
@@ -285,6 +299,7 @@ var ContactBox = React.createClass({
   render: function() {
     return(
       <div id="contact-box">
+				<div className="navAnchor" id="contact"></div>
         <a href='https://github.com/edcheung1' target='_blank'>
           <i className="fa fa-github fa-2x fa-fw" /></a>
         <a href='https://www.linkedin.com/in/edcheung1991' target='_blank'>
@@ -310,9 +325,9 @@ var Main = React.createClass({
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#">About</NavItem>
-            <NavItem eventKey={2} href="#">Portfolio</NavItem>
-            <NavItem eventKey={2} href="#">Contact</NavItem>
+            <NavItem eventKey={1} href="#about">About</NavItem>
+            <NavItem eventKey={2} href="#portfolio">Portfolio</NavItem>
+            <NavItem eventKey={2} href="#contact">Contact</NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

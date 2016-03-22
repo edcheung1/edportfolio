@@ -9,8 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-		"build-js": "browserify -t reactify public/app.jsx > public/bundle.js",
-		"watch-js": "watchify -t reactify public/app.jsx -o public/bundle.js -v"
+    "build-js": "browserify -t reactify public/app.jsx > public/bundle.js",
+    "watch-js": "watchify -t reactify public/app.jsx -o public/bundle.js -v"
   },
   "repository": {
     "type": "git",
@@ -23,12 +23,14 @@
   },
   "homepage": "https://github.com/edcheung1/edportfolio#readme",
   "dependencies": {
+    "browserify": "^13.0.0",
     "express": "^4.13.3",
     "express-useragent": "^0.2.4",
     "react": "^0.14.7",
     "react-addons-css-transition-group": "^0.14.7",
     "react-bootstrap": "^0.28.3",
     "react-dom": "^0.14.7",
+    "react-timer-mixin": "^0.13.3",
     "reactify": "^1.1.1"
   },
   "devDependencies": {}
