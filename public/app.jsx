@@ -90,7 +90,7 @@ var AboutBox = React.createClass({
             <h1>ED CHEUNG</h1>
           </div>
           <div id='profile'>
-            <img src='http://res.cloudinary.com/edcheung/image/upload/c_crop,h_1400,w_1400,x_1415,y_140/v1458272643/Ed_Self_n6tf30.jpg' id='profile-pic' />
+            <img src='https://res.cloudinary.com/edcheung/image/upload/c_crop,h_1400,w_1400,x_1415,y_140/v1458272643/Ed_Self_n6tf30.jpg' id='profile-pic' />
             <div className="fa fa-cogs fa-lg" id='profile-icon'></div>
           </div>
           <h3>
@@ -108,7 +108,8 @@ var ProjectBox = React.createClass({
 	mixins: [TimerMixin],
   getInitialState: function() {
      return {
-       projectList: allProjects
+       projectList: [],
+			 currFilter: 'fav'
      }
   },
   
@@ -120,7 +121,11 @@ var ProjectBox = React.createClass({
     ascending = !ascending;
   },
   
-  setFilter: function(filter, e) {		
+  setFilter: function(filter, e) {
+		if(this.state.currFilter === filter) {
+			return;
+		}
+		
 		$('#portfolio-menu').children().removeClass('portfolio-menu-select').css('color', '#333');    
 		if(typeof e !== 'undefined') {
 			$(e.currentTarget).addClass('portfolio-menu-select');
@@ -140,7 +145,8 @@ var ProjectBox = React.createClass({
 			}    
 			
 			this.setState({
-				projectList: filteredList        
+				projectList: filteredList,
+				currFilter: filter
 			});			
 		}, 300);    
   },
