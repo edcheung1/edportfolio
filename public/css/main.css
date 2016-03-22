@@ -209,23 +209,23 @@ a.darken img {
   color: #888;
 }
 
-.example-enter {
+.project-enter {
   opacity: 0.01;
 	transform: translate(0, 50px);
 }
 
-.example-enter.example-enter-active {
+.project-enter.project-enter-active {
   opacity: 1;
 	transform: translate(0, 0);
   transition: opacity 500ms ease-in, transform 500ms ease-in;
 }
 
-.example-leave {
+.project-leave {
   opacity: 1;
 	transform: translate(0, 0);
 }
 
-.example-leave.example-leave-active {
+.project-leave.project-leave-active {
   opacity: 0.01;
 	transform: translate(0, 50px);
   transition: opacity 300ms ease-in, transform 500ms ease-in;

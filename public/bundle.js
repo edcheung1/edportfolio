@@ -35932,33 +35932,7 @@ var ReactBootstrap = require('react-bootstrap');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 var TimerMixin = require('react-timer-mixin');
 
-var allProjects = [
-	{title: 'My Portfolio', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458516387/Ed_Portfolio_hd1rck.png', link: 'http://edcheung-portfolio.herokuapp.com/', git: 'https://github.com/edcheung1/edportfolio', date:'3/25/16', tags: ['fav', 'full']},
-  {title: 'Simon', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', desc: 'A remake of the classic Simon® game, test your memory and reflexes and try to reach a score of 20! Activate strict mode to make the game reset completely on a mistake, or deactivate it so it continues where you left off.', date: '1/5/16', tags: ['fav', 'front']},
-  {title: 'Recipe Box', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link:
-  'http://codepen.io/edcheung/pen/bExZzv', date: '2/17/16', tags: ['fav', 'front']},
-  {title: 'MongoMart', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'full']},
-  {title: 'Worm Game', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191409/Ed_JavaWorm_n1igtk.png', date: '10/27/15', tags: ['fav', 'other']},
-  {title: 'Game of Life', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191410/Ed_GameOfLifeJava_lzwakq.png', date: '10/10/15', tags: ['other']},
-  {title: 'GDP Data Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['fav', 'data']},
-  {title: 'Tic-Tac-Toe', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_north,h_175,w_275/v1457898738/Ed_TicTacToe_mbchhm.png', link: 'http://codepen.io/edcheung/pen/PZNpbQ', date: '12/22/15', tags: ['fav', 'front']},
-  {title: 'Markdown Previewer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917602/Ed_MarkdownPreviewer_ddlmxc.png', link: 'http://codepen.io/edcheung/pen/NxzxWQ', date: '1/29/16', tags: ['front']},
-  {title: 'Camper Leaderboard', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917939/Ed_CamperLeaderBoard_gssv7k.png', link: 'http://codepen.io/edcheung/pen/ZQjQyp', date: '2/3/16', tags: ['front']},
-  {title: 'TwitchTV App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457918127/Ed_Twitch_nqchyu.png', link: 'http://codepen.io/edcheung/pen/YyMQPz', date: '12/4/15', tags: ['front']},
-  {title: 'Wikipedia App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_scale,h_175,w_275/v1457918801/Ed_Wikipedia_cnrn9e.png', link: 'http://codepen.io/edcheung/pen/zrYmPg', date: '12/11/15', tags: ['front']},
-  {title: 'Camper News App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457918991/Ed_CamperNews_xjx17n.png', link: 'http://codepen.io/edcheung/pen/KVPoad', date: '12/2/15', tags: ['front']},
-  {title: 'Javascript Calculator', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919250/Ed_Calculator_uvaqtt.png', link: 'http://codepen.io/edcheung/pen/RWEeEK', date: '11/17/15', tags: ['front']},
-  {title: 'Local Weather App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919450/Ed_Weather_a6dqqp.png', link: 'http://codepen.io/edcheung/pen/qOvBNd', date: '11/18/15', tags: ['front']},
-  {title: 'Pomodoro Timer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920246/Ed_Timer_q0kjfl.png', link: 'http://codepen.io/edcheung/pen/VvEbjm', date: '11/13/15', tags: ['front']},
-  {title: 'Timestamp Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457921043/Ed_Timestamp_tmicee.png', link: 'https://edcheung-fcc-timestamp.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-timestamp', date: '1/15/16', tags: ['back']},
-  {title: 'Header Parser Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457921199/Ed_HeaderParser_ex6ffo.png', link: 'https://edcheung-fcc-headerparser.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-headerParser', date: '1/17/16', tags: ['back']},
-  {title: 'URL Shortener Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457998163/Ed_UrlShortener_mxhhzo.png', link: 'https://edcheung-fcc-urlshortener.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-urlshortener', date: '1/15/16', tags: ['back']},
-  {title: 'Image Search Abstraction Layer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458188556/Ed_ImageSearch_suve2e.png', link: 'https://edcheung-fcc-imgsearch.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-imagesearch', date: '1/25/16', tags: ['back']},
-  {title: 'File Metadata Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back']}
-	
-];
-
-var projectsShown = 0;
+var allProjects = require('./data/projects.json');
 var ascending = true;
 
 var Modal = ReactBootstrap.Modal;
@@ -35966,6 +35940,10 @@ var ButtonToolbar = ReactBootstrap.ButtonToolbar;
 var Button = ReactBootstrap.Button;
 var Navbar = ReactBootstrap.Navbar, Nav = ReactBootstrap.Nav, NavItem = ReactBootstrap.NavItem;
 var NavDropdown = ReactBootstrap.NavDropdown, MenuItem = ReactBootstrap.MenuItem;
+
+/*
+	React class for about container
+*/
 
 var AboutBox = React.createClass({displayName: "AboutBox",
   getInitialState: function() {
@@ -36032,12 +36010,20 @@ var AboutBox = React.createClass({displayName: "AboutBox",
   }  
 })
 
-var ProjectBox = React.createClass({displayName: "ProjectBox",
+/*
+	React class for portfolio container
+*/
+
+var PortfolioBox = React.createClass({displayName: "PortfolioBox",
 	mixins: [TimerMixin],
   getInitialState: function() {
+		var initialFilterFav = allProjects.filter(function(project) {
+			return $.inArray('fav', project.tags) > -1;      
+		});     
+		
      return {
-       projectList: allProjects,
-			 currFilter: ''
+       projectList: initialFilterFav,
+			 currFilter: 'fav'
      }
   },
   
@@ -36050,7 +36036,7 @@ var ProjectBox = React.createClass({displayName: "ProjectBox",
   },
   
   setFilter: function(filter, e) {
-		if(this.state.currFilter == filter) {
+		if(this.state.currFilter === filter) {
 			return;
 		}
 		
@@ -36204,7 +36190,7 @@ var ProjectRow = React.createClass({displayName: "ProjectRow",
        
     return (
       React.createElement("div", {className: "project-list-container"}, 
-				React.createElement(ReactCSSTransitionGroup, {transitionName: "example", transitionEnterTimeout: 500, transitionLeaveTimeout: 300}, 
+				React.createElement(ReactCSSTransitionGroup, {transitionName: "project", transitionEnterTimeout: 500, transitionLeaveTimeout: 300}, 
 					projectList
 				), 
         React.createElement(Modal, {
@@ -36229,6 +36215,10 @@ var ProjectRow = React.createClass({displayName: "ProjectRow",
   }  
 });
 
+/*
+	React class for contact information container
+*/
+
 var ContactBox = React.createClass({displayName: "ContactBox",
   render: function() {
     return(
@@ -36247,7 +36237,7 @@ var ContactBox = React.createClass({displayName: "ContactBox",
   }  
 })
 
-var Main = React.createClass({displayName: "Main",
+var Main = React.createClass({displayName: "Main",	
   render: function() {
     const navbarInstance = (
       React.createElement(Navbar, {inverse: true, fixedTop: true}, 
@@ -36261,7 +36251,7 @@ var Main = React.createClass({displayName: "Main",
           React.createElement(Nav, {pullRight: true}, 
             React.createElement(NavItem, {eventKey: 1, href: "#about"}, "About"), 
             React.createElement(NavItem, {eventKey: 2, href: "#portfolio"}, "Portfolio"), 
-            React.createElement(NavItem, {eventKey: 2, href: "#contact"}, "Contact")
+            React.createElement(NavItem, {eventKey: 3, href: "#contact"}, "Contact")
           )
         )
       )
@@ -36271,8 +36261,8 @@ var Main = React.createClass({displayName: "Main",
       React.createElement("div", null, 
         navbarInstance, 
         React.createElement(AboutBox, null), 
-        React.createElement(ProjectBox, null), 
-        React.createElement(ContactBox, null)
+        React.createElement(PortfolioBox, null), 
+        React.createElement(ContactBox, {id: "contactBox"})
       )
     );    
   }  
@@ -36293,10 +36283,30 @@ function compareDate(a,b) {
   } else {
     return 0;
   }
-}
-//http://fb.me/react-with-addons-0.13.2.js
-// <ReactCSSTransitionGroup transitionName="example">
-//           {projectRow}
-//         </ReactCSSTransitionGroup>
+};
 
-},{"react":410,"react-addons-css-transition-group":2,"react-bootstrap":74,"react-dom":247,"react-timer-mixin":248}]},{},[411]);
+},{"./data/projects.json":412,"react":410,"react-addons-css-transition-group":2,"react-bootstrap":74,"react-dom":247,"react-timer-mixin":248}],412:[function(require,module,exports){
+module.exports=[
+	{title: 'My Portfolio', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458516387/Ed_Portfolio_hd1rck.png', link: 'http://edcheung-portfolio.herokuapp.com/', git: 'https://github.com/edcheung1/edportfolio', date:'3/25/16', tags: ['fav', 'full']},
+	{title: 'Simon', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', desc: 'A remake of the classic Simon® game, test your memory and reflexes and try to reach a score of 20! Activate strict mode to make the game reset completely on a mistake, or deactivate it so it continues where you left off.', date: '1/5/16', tags: ['fav', 'front']},
+	{title: 'Recipe Box', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link: 'http://codepen.io/edcheung/pen/bExZzv', date: '2/17/16', tags: ['fav', 'front']},
+	{title: 'MongoMart', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'full']},
+	{title: 'Game of Life', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191410/Ed_GameOfLifeJava_lzwakq.png', date: '10/10/15', tags: ['other']},
+	{title: 'GDP Data Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['fav', 'data']},
+	{title: 'Tic-Tac-Toe', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_north,h_175,w_275/v1457898738/Ed_TicTacToe_mbchhm.png', link: 'http://codepen.io/edcheung/pen/PZNpbQ', date: '12/22/15', tags: ['fav', 'front']},
+	{title: 'Worm Game', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191409/Ed_JavaWorm_n1igtk.png', date: '10/27/15', tags: ['fav', 'other']},
+	{title: 'Markdown Previewer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917602/Ed_MarkdownPreviewer_ddlmxc.png', link: 'http://codepen.io/edcheung/pen/NxzxWQ', date: '1/29/16', tags: ['front']},
+	{title: 'Camper Leaderboard', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917939/Ed_CamperLeaderBoard_gssv7k.png', link: 'http://codepen.io/edcheung/pen/ZQjQyp', date: '2/3/16', tags: ['front']},
+	{title: 'TwitchTV App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457918127/Ed_Twitch_nqchyu.png', link: 'http://codepen.io/edcheung/pen/YyMQPz', date: '12/4/15', tags: ['front']},
+	{title: 'Wikipedia App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_scale,h_175,w_275/v1457918801/Ed_Wikipedia_cnrn9e.png', link: 'http://codepen.io/edcheung/pen/zrYmPg', date: '12/11/15', tags: ['front']},
+	{title: 'Camper News App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457918991/Ed_CamperNews_xjx17n.png', link: 'http://codepen.io/edcheung/pen/KVPoad', date: '12/2/15', tags: ['front']},
+	{title: 'Javascript Calculator', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919250/Ed_Calculator_uvaqtt.png', link: 'http://codepen.io/edcheung/pen/RWEeEK', date: '11/17/15', tags: ['front']},
+	{title: 'Local Weather App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919450/Ed_Weather_a6dqqp.png', link: 'http://codepen.io/edcheung/pen/qOvBNd', date: '11/18/15', tags: ['front']},
+	{title: 'Pomodoro Timer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920246/Ed_Timer_q0kjfl.png', link: 'http://codepen.io/edcheung/pen/VvEbjm', date: '11/13/15', tags: ['front']},
+	{title: 'Timestamp Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457921043/Ed_Timestamp_tmicee.png', link: 'https://edcheung-fcc-timestamp.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-timestamp', date: '1/15/16', tags: ['back']},
+	{title: 'Header Parser Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457921199/Ed_HeaderParser_ex6ffo.png', link: 'https://edcheung-fcc-headerparser.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-headerParser', date: '1/17/16', tags: ['back']},
+	{title: 'URL Shortener Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457998163/Ed_UrlShortener_mxhhzo.png', link: 'https://edcheung-fcc-urlshortener.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-urlshortener', date: '1/15/16', tags: ['back']},
+	{title: 'Image Search Abstraction Layer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458188556/Ed_ImageSearch_suve2e.png', link: 'https://edcheung-fcc-imgsearch.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-imagesearch', date: '1/25/16', tags: ['back']},
+	{title: 'File Metadata Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back']}
+]
+},{}]},{},[411]);
