@@ -83,6 +83,27 @@ var AboutBox = React.createClass({
 })
 
 /*
+	React class for introduction container
+*/
+
+var IntroBox = React.createClass({
+	render: function() {
+		return(
+			<div id="intro-box">
+				<div className="container">
+					<div className="col-sm-6 text-right">
+						ldfjlasjflksdjlfjaslfj
+					</div>
+					<div className="col-sm-6 text-left">
+						dlsajflsajflksdfj
+					</div>
+				</div>
+			</div>
+		);
+	}	
+})
+
+/*
 	React class for portfolio container
 */
 
@@ -333,6 +354,7 @@ var Main = React.createClass({
       <div>
         {navbarInstance}        
         <AboutBox />
+				<IntroBox />
         <PortfolioBox />
         <ContactBox id="contactBox"/>
       </div>

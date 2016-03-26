@@ -36011,6 +36011,27 @@ var AboutBox = React.createClass({displayName: "AboutBox",
 })
 
 /*
+	React class for introduction container
+*/
+
+var IntroBox = React.createClass({displayName: "IntroBox",
+	render: function() {
+		return(
+			React.createElement("div", {id: "intro-box"}, 
+				React.createElement("div", {className: "container"}, 
+					React.createElement("div", {className: "col-sm-6 text-right"}, 
+						"ldfjlasjflksdjlfjaslfj"
+					), 
+					React.createElement("div", {className: "col-sm-6 text-left"}, 
+						"dlsajflsajflksdfj"
+					)
+				)
+			)
+		);
+	}	
+})
+
+/*
 	React class for portfolio container
 */
 
@@ -36261,6 +36282,7 @@ var Main = React.createClass({displayName: "Main",
       React.createElement("div", null, 
         navbarInstance, 
         React.createElement(AboutBox, null), 
+				React.createElement(IntroBox, null), 
         React.createElement(PortfolioBox, null), 
         React.createElement(ContactBox, {id: "contactBox"})
       )
