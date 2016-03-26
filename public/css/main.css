@@ -13,8 +13,10 @@ h1 {
 
 .navAnchor {
 	position: absolute;
-	top: -5em;
+	top: -3.5em;
 }
+
+/* Styling for about-box */
 
 #about-box {
   position: relative;
@@ -92,24 +94,38 @@ h1 {
   border: 8px solid #EEE;
 }
 
+/* Styling for intro-box */
+
 #intro-box {
-	position: relative;
-	background-color: #444;
-	margin: 3em;
-	padding: 1.5em;
+	padding: 1em 0 4em 0;
+	background-color: #222;
 	color: #DDD;
 }
 
+#hello-box {
+	background-color: #444;
+	top: 2em;
+	padding: 2em;
+}
+
+#cert-box {
+	background-color: #555;
+	top: 2em;
+	padding: 2em;
+}
+
+/* Styling for portfolio-box */
+
 #portfolio-box {
   position: relative;
-  padding-bottom: 2em;
+  padding: 1em 0 2em 0;
 }
 
 #portfolio-menu {
   position: absolute;
   text-align: left;
   display: inline-block;
-  top: 1em;
+  top: 2.5em;
   left: 0;
   z-index: 11;
 	min-width: 13em;
@@ -179,7 +195,7 @@ h1 {
 	top: 1em;
 	left: 0;
 	width: 100%;
-	font-size: 2em;
+	font-size: 1.5em;
 	opacity: 0;
 	transition: opacity .5s;
 	color: #DDD;

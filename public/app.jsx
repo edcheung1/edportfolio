@@ -88,31 +88,35 @@ var AboutBox = React.createClass({
 var IntroBox = React.createClass({
 	render: function() {
 		return(
-			<div id="intro-box">
-				<div className="navAnchor" id="about"></div>
+			<div id="intro-box">				
 				<div className="container">
-					<div className="col-sm-6 text-left" id="hello-box">
-						<h2>Hello!</h2><br/>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<div className="col-sm-6 text-left">
+						<div className="col-md-12" id="hello-box">
+							<div className="navAnchor" id="about"></div>
+							<h2>Hello!</h2><br/>						
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
 					</div>
 					<div className="col-sm-6 text-left">
-						<h2>Certificates</h2><br/>
-						<a href="./public/data/certificates/mongodbcert.pdf" target="_blank">
-							<Button><i className="fa fa-leaf fa-fw" />&nbsp;MongoDB for Node.js Developers</Button>
-						</a><br/><br/>
-						<a href="https://www.freecodecamp.com/edcheung1/front-end-certification" target="_blank">
-							<Button><i className="fa fa-fire fa-fw" />&nbsp;FreeCodeCamp Front-End</Button>
-						</a><br/><br/>
-						<a href="./public/data/certificates/java_mooc1.pdf" target="_blank">
-							<Button><i className="fa fa-coffee fa-fw" />&nbsp;OOP with Java Part 1</Button>
-						</a><br/><br/>
-						<a href="./public/data/certificates/java_mooc2.pdf" target="_blank">
-							<Button><i className="fa fa-coffee fa-fw" />&nbsp;OOP with Java Part 2</Button>
-						</a><br/><br/>
-						<h2>Resume</h2>
-						<a href="./public/data/certificates/EdwardCheungResume.pdf" target="_blank">
-							<Button><i className="fa fa-graduation-cap fa-fw" />&nbsp;Edward Cheung</Button>
-						</a>
+						<div className="col-md-12" id="cert-box">
+							<h2>Certificates</h2><br/>
+							<a href="./public/data/certificates/mongodbcert.pdf" target="_blank">
+								<Button><i className="fa fa-leaf fa-fw" />&nbsp;MongoDB for Node.js Developers</Button>
+							</a><br/><br/>
+							<a href="https://www.freecodecamp.com/edcheung1/front-end-certification" target="_blank">
+								<Button><i className="fa fa-fire fa-fw" />&nbsp;FreeCodeCamp Front-End</Button>
+							</a><br/><br/>
+							<a href="./public/data/certificates/java_mooc1.pdf" target="_blank">
+								<Button><i className="fa fa-coffee fa-fw" />&nbsp;OOP with Java Part 1</Button>
+							</a><br/><br/>
+							<a href="./public/data/certificates/java_mooc2.pdf" target="_blank">
+								<Button><i className="fa fa-coffee fa-fw" />&nbsp;OOP with Java Part 2</Button>
+							</a><br/><br/>
+							<h2>Resumé</h2>
+							<a href="./public/data/certificates/EdwardCheungResume.pdf" target="_blank">
+								<Button><i className="fa fa-graduation-cap fa-fw" />&nbsp;Edward Cheung</Button>
+							</a>
+						</div>
 					</div>
 				</div>				
 			</div>
