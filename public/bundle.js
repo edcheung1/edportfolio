@@ -36201,26 +36201,7 @@ var ProjectRow = React.createClass({displayName: "ProjectRow",
       projectButtons: modalButtons,
     });
   },
-  
-	componentDidMount: function() {
-		this.setProjectHover();
-	},
-	
-  componentDidUpdate: function() {
-    this.setProjectHover();
-  },   
-  
-	setProjectHover: function() {
-		// $('.project-box').hover(function() {
-      // $(this).find('img').stop(true, true).fadeTo(250, .25);
-			// // $(this).find('span').stop(true, true).fadeIn(250); 
-    // }, function() {
-      // $(this).find('img').stop(true, true).fadeTo(250, 1);     
-			// // $(this).find('span').stop(true, true).fadeOut(250); 
-    // });
-	},
-	
-	// <div className="project-title">{project.title}</div>
+
   render: function() {
     var projectList = this.props.projects.map(function(project, i) {
       return(

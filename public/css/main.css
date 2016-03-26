@@ -51,17 +51,17 @@ h1 {
 }
 
 .dev-bg {
-  background-image: url("https://res.cloudinary.com/edcheung/image/upload/c_scale,w_1834/v1458332567/wood-coffee-iphone-notebook_fmk5sy.jpg");
+  background-image: url("/public/img/devbg.jpg");
   background-position: center top;
 }
 
 .engr-bg {
-  background-image: url("https://res.cloudinary.com/edcheung/image/upload/v1458331536/tJEPk_km6tiv.jpg");
+  background-image: url("/public/img/engrbg.jpg");
   background-position: 55% 80%;
 }
 
 .data-bg {
-  background-image: url("https://res.cloudinary.com/edcheung/image/upload/c_scale,w_1152/v1458345406/564803_r5jttw.jpg");
+  background-image: url("/public/img/databg.jpg");
 }
 
 #profile {
