@@ -216,40 +216,6 @@ h1 {
   cursor: pointer;
 }
 
-.modal {
-  top: 25%;
-}
-
-.modal-header {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.modal-body {
-  min-height: 215px;
-  text-align: left;
-}
-
-.modal-img {
-  border: 2px solid black;
-  margin-right: 10px;
-}
-
-#contact-box {
-	position: relative;
-  background-color: #222;
-  color: #DDD;
-  padding: 2em;
-}
-
-#contact-box a {
-  color: inherit;
-}
-
-#contact-box a:hover {
-  color: #888;
-}
-
 .project-enter {
   opacity: 0.01;
 	transform: translate(0, 50px);
@@ -270,4 +236,40 @@ h1 {
   opacity: 0.01;
 	transform: translate(0, 50px);
   transition: opacity 300ms ease-in, transform 500ms ease-in;
+}
+
+.modal {
+  top: 25%;
+}
+
+.modal-header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-body {
+  min-height: 215px;
+  text-align: left;
+}
+
+.modal-img {
+  border: 2px solid black;
+  margin-right: 10px;
+}
+
+/* Styling for contact-box */
+
+#contact-box {
+	position: relative;
+  background-color: #222;
+  color: #DDD;
+  padding: 1em;
+}
+
+#contact-box a {
+  color: inherit;
+}
+
+#contact-box a:hover {
+  color: #888;
 }

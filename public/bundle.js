@@ -36027,7 +36027,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 					), 
 					React.createElement("div", {className: "col-sm-6 text-left"}, 
 						React.createElement("div", {className: "col-md-12", id: "cert-box"}, 
-							React.createElement("h2", null, "Certificates"), React.createElement("br", null), 
+							React.createElement("h2", null, "Certificates"), 
 							React.createElement("a", {href: "./public/data/certificates/mongodbcert.pdf", target: "_blank"}, 
 								React.createElement(Button, null, React.createElement("i", {className: "fa fa-leaf fa-fw"}), " MongoDB for Node.js Developers")
 							), React.createElement("br", null), React.createElement("br", null), 
@@ -36070,11 +36070,23 @@ var PortfolioBox = React.createClass({displayName: "PortfolioBox",
   },
   
   sortDate: function() {
-    var sortedProjects = this.state.projectList.sort(compareDate);
-    this.setState({
-      projectList: sortedProjects
-    })
-    ascending = !ascending;
+		if(this.state.projectList.length <= 0) {
+			setFilter(this.state.currFilter);
+		};
+		
+		var sortedProjects = this.state.projectList.sort(compareDate);
+		
+		this.setState({
+			projectList: []
+		});
+		
+		this.setTimeout(function() {			
+			this.setState({
+				projectList: sortedProjects
+			})
+			ascending = !ascending;			
+		}, 300);
+    
   },
   
   setFilter: function(filter, e) {
@@ -36254,6 +36266,7 @@ var ContactBox = React.createClass({displayName: "ContactBox",
   render: function() {
     return(
       React.createElement("div", {id: "contact-box"}, 
+				React.createElement("h2", null, "Contact"), React.createElement("br", null), 
 				React.createElement("div", {className: "navAnchor", id: "contact"}), 
         React.createElement("a", {href: "https://github.com/edcheung1", target: "_blank"}, 
           React.createElement("i", {className: "fa fa-github fa-2x fa-fw"})), 
@@ -36323,9 +36336,10 @@ module.exports=[
 	{title: 'Simon', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', desc: 'A remake of the classic Simon® game, test your memory and reflexes and try to reach a score of 20! Activate strict mode to make the game reset completely on a mistake, or deactivate it so it continues where you left off.', date: '1/5/16', tags: ['fav', 'front']},
 	{title: 'Recipe Box', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link: 'http://codepen.io/edcheung/pen/bExZzv', date: '2/17/16', tags: ['fav', 'front']},
 	{title: 'MongoMart', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'full']},
-	{title: 'Game of Life', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191410/Ed_GameOfLifeJava_lzwakq.png', date: '10/10/15', tags: ['other']},
 	{title: 'GDP Data Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['fav', 'data']},
 	{title: 'Tic-Tac-Toe', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_north,h_175,w_275/v1457898738/Ed_TicTacToe_mbchhm.png', link: 'http://codepen.io/edcheung/pen/PZNpbQ', date: '12/22/15', tags: ['fav', 'front']},
+	{title: 'Matrix Structural Analysis Script', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1459027327/Ed_MatrixStructure_hhtt7v.png', date: '10/27/15', tags: ['fav', 'other']},
+	{title: 'Game of Life', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191410/Ed_GameOfLifeJava_lzwakq.png', date: '10/10/15', tags: ['other']},
 	{title: 'Worm Game', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191409/Ed_JavaWorm_n1igtk.png', date: '10/27/15', tags: ['fav', 'other']},
 	{title: 'Markdown Previewer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917602/Ed_MarkdownPreviewer_ddlmxc.png', link: 'http://codepen.io/edcheung/pen/NxzxWQ', date: '1/29/16', tags: ['front']},
 	{title: 'Camper Leaderboard', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917939/Ed_CamperLeaderBoard_gssv7k.png', link: 'http://codepen.io/edcheung/pen/ZQjQyp', date: '2/3/16', tags: ['front']},

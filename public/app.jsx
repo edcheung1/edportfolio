@@ -99,7 +99,7 @@ var IntroBox = React.createClass({
 					</div>
 					<div className="col-sm-6 text-left">
 						<div className="col-md-12" id="cert-box">
-							<h2>Certificates</h2><br/>
+							<h2>Certificates</h2>
 							<a href="./public/data/certificates/mongodbcert.pdf" target="_blank">
 								<Button><i className="fa fa-leaf fa-fw" />&nbsp;MongoDB for Node.js Developers</Button>
 							</a><br/><br/>
@@ -142,11 +142,22 @@ var PortfolioBox = React.createClass({
   },
   
   sortDate: function() {
-    var sortedProjects = this.state.projectList.sort(compareDate);
-    this.setState({
-      projectList: sortedProjects
-    })
-    ascending = !ascending;
+		if(this.state.projectList.length <= 0) {
+			setFilter(this.state.currFilter);
+		};
+		
+		var sortedProjects = this.state.projectList.sort(compareDate);
+		
+		this.setState({
+			projectList: []
+		});
+		
+		this.setTimeout(function() {			
+			this.setState({
+				projectList: sortedProjects
+			})
+			ascending = !ascending;			
+		}, 300);    
   },
   
   setFilter: function(filter, e) {
@@ -326,6 +337,7 @@ var ContactBox = React.createClass({
   render: function() {
     return(
       <div id="contact-box">
+				<h2>Contact</h2><br/>
 				<div className="navAnchor" id="contact"></div>
         <a href='https://github.com/edcheung1' target='_blank'>
           <i className="fa fa-github fa-2x fa-fw" /></a>
