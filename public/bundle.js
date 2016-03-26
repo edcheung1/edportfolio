@@ -35989,8 +35989,7 @@ var AboutBox = React.createClass({displayName: "AboutBox",
   
   render: function() {
     return(
-      React.createElement("div", {id: "about-box"}, 
-				React.createElement("div", {className: "navAnchor", id: "about"}), 
+      React.createElement("div", {id: "about-box"}, 				
         React.createElement("div", {id: "about-inner"}, 
           React.createElement("div", {id: "about-header"}, 
             React.createElement("h1", null, "ED CHEUNG")
@@ -36018,16 +36017,28 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 	render: function() {
 		return(
 			React.createElement("div", {id: "intro-box"}, 
+				React.createElement("div", {className: "navAnchor", id: "about"}), 
 				React.createElement("div", {className: "container"}, 
-					React.createElement("div", {className: "col-sm-6 text-right"}, 
-						React.createElement("a", {href: "./public/data/certificates/mongodbcert.pdf"}, 
-							React.createElement(Button, {bsStyle: "primary"}, "MongoDB")
-						)
+					React.createElement("div", {className: "col-sm-6 text-left", id: "hello-box"}, 
+						React.createElement("h2", null, "Hello!"), React.createElement("br", null), 
+						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 					), 
 					React.createElement("div", {className: "col-sm-6 text-left"}, 
-						"dlsajflsajflksdfj"
+						React.createElement("h2", null, "Certificates"), React.createElement("br", null), 
+						React.createElement("a", {href: "./public/data/certificates/mongodbcert.pdf", target: "_blank"}, 
+							React.createElement(Button, null, React.createElement("i", {className: "fa fa-leaf fa-fw"}), " MongoDB")
+						), React.createElement("br", null), React.createElement("br", null), 
+						React.createElement("a", {href: "https://www.freecodecamp.com/edcheung1/front-end-certification", target: "_blank"}, 
+							React.createElement(Button, null, React.createElement("i", {className: "fa fa-fire fa-fw"}), " FreeCodeCamp Front-End")
+						), React.createElement("br", null), React.createElement("br", null), 
+						React.createElement("a", {href: "./public/data/certificates/java_mooc1.pdf", target: "_blank"}, 
+							React.createElement(Button, null, React.createElement("i", {className: "fa fa-coffee fa-fw"}), " OOP with Java Part 1")
+						), React.createElement("br", null), React.createElement("br", null), 
+						React.createElement("a", {href: "./public/data/certificates/java_mooc2.pdf", target: "_blank"}, 
+							React.createElement(Button, null, React.createElement("i", {className: "fa fa-coffee fa-fw"}), " OOP with Java Part 2")
+						)
 					)
-				)
+				)				
 			)
 		);
 	}	
@@ -36097,7 +36108,7 @@ var PortfolioBox = React.createClass({displayName: "PortfolioBox",
     return(
         React.createElement("div", {id: "portfolio-box"}, 
 					React.createElement("div", {className: "navAnchor", id: "portfolio"}), 
-          React.createElement("h3", null, "Portfolio"), 
+          React.createElement("h2", null, "Portfolio"), 
           React.createElement("div", {id: "portfolio-menu"}, 
             React.createElement("div", {onClick: this.setFilter.bind(this, 'fav')}, 
 							React.createElement("div", null, 
@@ -36191,22 +36202,31 @@ var ProjectRow = React.createClass({displayName: "ProjectRow",
     });
   },
   
+	componentDidMount: function() {
+		this.setProjectHover();
+	},
+	
   componentDidUpdate: function() {
-    $('.darken').hover(function() {
-      $(this).find('img').stop(true, true).fadeTo(250, .5);      
-    }, function() {
-      $(this).find('img').stop(true, true).fadeTo(250, 1);      
-    });
+    this.setProjectHover();
   },   
   
+	setProjectHover: function() {
+		// $('.project-box').hover(function() {
+      // $(this).find('img').stop(true, true).fadeTo(250, .25);
+			// // $(this).find('span').stop(true, true).fadeIn(250); 
+    // }, function() {
+      // $(this).find('img').stop(true, true).fadeTo(250, 1);     
+			// // $(this).find('span').stop(true, true).fadeOut(250); 
+    // });
+	},
+	
+	// <div className="project-title">{project.title}</div>
   render: function() {
     var projectList = this.props.projects.map(function(project, i) {
       return(
         React.createElement("div", {className: "col-md-4 col-sm-6 col-xs-12 project-box project-slideup", key: i+1}, 
-          React.createElement("div", {className: "project-title"}, project.title), 
-          React.createElement("a", {className: "darken"}, 
-            React.createElement("img", {src: project.thumb, className: "project-thumb", onClick: this.openModal.bind(null, project)})
-          )
+					React.createElement("span", null, project.title), 
+					React.createElement("img", {src: project.thumb, className: "project-thumb", onClick: this.openModal.bind(null, project)})
         )
       );
     }.bind(this));    

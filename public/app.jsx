@@ -61,8 +61,7 @@ var AboutBox = React.createClass({
   
   render: function() {
     return(
-      <div id='about-box'>
-				<div className="navAnchor" id="about"></div>
+      <div id='about-box'>				
         <div id='about-inner'>
           <div id='about-header'>
             <h1>ED CHEUNG</h1>
@@ -90,16 +89,28 @@ var IntroBox = React.createClass({
 	render: function() {
 		return(
 			<div id="intro-box">
+				<div className="navAnchor" id="about"></div>
 				<div className="container">
-					<div className="col-sm-6 text-right">
-						<a href="./public/data/certificates/mongodbcert.pdf">
-							<Button bsStyle="primary">MongoDB</Button>
-						</a>
+					<div className="col-sm-6 text-left" id="hello-box">
+						<h2>Hello!</h2><br/>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</div>
 					<div className="col-sm-6 text-left">
-						dlsajflsajflksdfj
+						<h2>Certificates</h2><br/>
+						<a href="./public/data/certificates/mongodbcert.pdf" target="_blank">
+							<Button><i className="fa fa-leaf fa-fw" />&nbsp;MongoDB</Button>
+						</a><br/><br/>
+						<a href="https://www.freecodecamp.com/edcheung1/front-end-certification" target="_blank">
+							<Button><i className="fa fa-fire fa-fw" />&nbsp;FreeCodeCamp Front-End</Button>
+						</a><br/><br/>
+						<a href="./public/data/certificates/java_mooc1.pdf" target="_blank">
+							<Button><i className="fa fa-coffee fa-fw" />&nbsp;OOP with Java Part 1</Button>
+						</a><br/><br/>
+						<a href="./public/data/certificates/java_mooc2.pdf" target="_blank">
+							<Button><i className="fa fa-coffee fa-fw" />&nbsp;OOP with Java Part 2</Button>
+						</a>
 					</div>
-				</div>
+				</div>				
 			</div>
 		);
 	}	
@@ -169,7 +180,7 @@ var PortfolioBox = React.createClass({
     return(
         <div id="portfolio-box">
 					<div className="navAnchor" id="portfolio"></div>
-          <h3>Portfolio</h3>
+          <h2>Portfolio</h2>
           <div id="portfolio-menu">
             <div onClick={this.setFilter.bind(this, 'fav')}>
 							<div>
@@ -263,22 +274,31 @@ var ProjectRow = React.createClass({
     });
   },
   
+	componentDidMount: function() {
+		this.setProjectHover();
+	},
+	
   componentDidUpdate: function() {
-    $('.darken').hover(function() {
-      $(this).find('img').stop(true, true).fadeTo(250, .5);      
-    }, function() {
-      $(this).find('img').stop(true, true).fadeTo(250, 1);      
-    });
+    this.setProjectHover();
   },   
   
+	setProjectHover: function() {
+		// $('.project-box').hover(function() {
+      // $(this).find('img').stop(true, true).fadeTo(250, .25);
+			// // $(this).find('span').stop(true, true).fadeIn(250); 
+    // }, function() {
+      // $(this).find('img').stop(true, true).fadeTo(250, 1);     
+			// // $(this).find('span').stop(true, true).fadeOut(250); 
+    // });
+	},
+	
+	// <div className="project-title">{project.title}</div>
   render: function() {
     var projectList = this.props.projects.map(function(project, i) {
       return(
         <div className="col-md-4 col-sm-6 col-xs-12 project-box project-slideup" key={i+1}>
-          <div className="project-title">{project.title}</div>
-          <a className="darken">            
-            <img src={project.thumb} className="project-thumb" onClick={this.openModal.bind(null, project)}/>
-          </a>
+					<span>{project.title}</span> 
+					<img src={project.thumb} className="project-thumb" onClick={this.openModal.bind(null, project)}/>
         </div>
       );
     }.bind(this));    

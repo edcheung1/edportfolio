@@ -93,9 +93,10 @@ h1 {
 }
 
 #intro-box {
+	position: relative;
 	background-color: #444;
-	padding: 3em;
-	height: 5em;
+	margin: 3em;
+	padding: 1.5em;
 	color: #DDD;
 }
 
@@ -152,30 +153,41 @@ h1 {
 	padding-right: 3em;
 }
 
-a.darken {
-  display: inline-block;
-  background: black;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 0;
-}
-
-a.darken img {
-  display: relative;
-}
-
 .project-box {
-  padding-bottom: 20px;
+	display: relative;
+  padding: 2em 0 2em 0;
 }
 
-.project-title {
-  position: relative;
-  font-size: 16px;
-  white-space: nowrap;
+.project-box:hover > span {
+	opacity: 1;	
+}
+
+.project-box:hover > img {
+	opacity: .25;	
+}
+
+.project-box > span {
+	position: absolute;
+	text-align: center;
+	background: black;
+	left: 0;
+	top: 2em;
+	width: 100%;
+	font-size: 2em;
+	opacity: 0;
+	transition: opacity .5s;
+	color: #DDD;
+}
+
+.project-box > img {
+  display: relative;
+	opacity: 1;
+	transition: opacity .5s;
 }
 
 .project-thumb {
   border-radius: 5px;
+	border: 2px solid #444;
   width: 275px;
   height: 175px;
   overflow: hidden;
