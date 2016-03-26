@@ -153,13 +153,19 @@ h1 {
 	padding-right: 3em;
 }
 
-.project-box {
+.project-col {
 	display: relative;
   padding: 2em 0 2em 0;
 }
 
+.project-box {
+	position: relative;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
 .project-box:hover > span {
-	opacity: 1;	
+	opacity: .8;	
 }
 
 .project-box:hover > img {
@@ -170,8 +176,8 @@ h1 {
 	position: absolute;
 	text-align: center;
 	background: black;
+	top: 1em;
 	left: 0;
-	top: 2em;
 	width: 100%;
 	font-size: 2em;
 	opacity: 0;

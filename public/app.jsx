@@ -98,7 +98,7 @@ var IntroBox = React.createClass({
 					<div className="col-sm-6 text-left">
 						<h2>Certificates</h2><br/>
 						<a href="./public/data/certificates/mongodbcert.pdf" target="_blank">
-							<Button><i className="fa fa-leaf fa-fw" />&nbsp;MongoDB</Button>
+							<Button><i className="fa fa-leaf fa-fw" />&nbsp;MongoDB for Node.js Developers</Button>
 						</a><br/><br/>
 						<a href="https://www.freecodecamp.com/edcheung1/front-end-certification" target="_blank">
 							<Button><i className="fa fa-fire fa-fw" />&nbsp;FreeCodeCamp Front-End</Button>
@@ -108,6 +108,10 @@ var IntroBox = React.createClass({
 						</a><br/><br/>
 						<a href="./public/data/certificates/java_mooc2.pdf" target="_blank">
 							<Button><i className="fa fa-coffee fa-fw" />&nbsp;OOP with Java Part 2</Button>
+						</a><br/><br/>
+						<h2>Resume</h2>
+						<a href="./public/data/certificates/EdwardCheungResume.pdf" target="_blank">
+							<Button><i className="fa fa-graduation-cap fa-fw" />&nbsp;Edward Cheung</Button>
 						</a>
 					</div>
 				</div>				
@@ -259,16 +263,13 @@ var ProjectRow = React.createClass({
   },
   
   getModalButtons: function(project) {
-    var modalButtons = [];
-    
+    var modalButtons = [];    
     if (project.hasOwnProperty('link')) {
       modalButtons.push(<Button href={project.link} target='blank'><i className="fa fa-cog"></i> Demo</Button>)
-    }
-    
+    };    
     if (project.hasOwnProperty('git')) {
       modalButtons.push(<Button href={project.git} target='blank'><i className="fa fa-github"></i> GitHub</Button>)
-    }
-    
+    };    
     this.setState({
       projectButtons: modalButtons,
     });
@@ -277,9 +278,11 @@ var ProjectRow = React.createClass({
   render: function() {
     var projectList = this.props.projects.map(function(project, i) {
       return(
-        <div className="col-md-4 col-sm-6 col-xs-12 project-box project-slideup" key={i+1}>
-					<span>{project.title}</span> 
-					<img src={project.thumb} className="project-thumb" onClick={this.openModal.bind(null, project)}/>
+        <div className="col-md-4 col-sm-6 col-xs-12 project-col project-slideup" key={i+1}>
+					<div className="project-box">						
+						<img src={project.thumb} className="project-thumb" onClick={this.openModal.bind(null, project)}/>
+						<span>{project.title}</span> 
+					</div>
         </div>
       );
     }.bind(this));    

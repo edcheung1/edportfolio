@@ -36026,7 +36026,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 					React.createElement("div", {className: "col-sm-6 text-left"}, 
 						React.createElement("h2", null, "Certificates"), React.createElement("br", null), 
 						React.createElement("a", {href: "./public/data/certificates/mongodbcert.pdf", target: "_blank"}, 
-							React.createElement(Button, null, React.createElement("i", {className: "fa fa-leaf fa-fw"}), " MongoDB")
+							React.createElement(Button, null, React.createElement("i", {className: "fa fa-leaf fa-fw"}), " MongoDB for Node.js Developers")
 						), React.createElement("br", null), React.createElement("br", null), 
 						React.createElement("a", {href: "https://www.freecodecamp.com/edcheung1/front-end-certification", target: "_blank"}, 
 							React.createElement(Button, null, React.createElement("i", {className: "fa fa-fire fa-fw"}), " FreeCodeCamp Front-End")
@@ -36036,6 +36036,10 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 						), React.createElement("br", null), React.createElement("br", null), 
 						React.createElement("a", {href: "./public/data/certificates/java_mooc2.pdf", target: "_blank"}, 
 							React.createElement(Button, null, React.createElement("i", {className: "fa fa-coffee fa-fw"}), " OOP with Java Part 2")
+						), React.createElement("br", null), React.createElement("br", null), 
+						React.createElement("h2", null, "Resume"), 
+						React.createElement("a", {href: "./public/data/certificates/EdwardCheungResume.pdf", target: "_blank"}, 
+							React.createElement(Button, null, React.createElement("i", {className: "fa fa-graduation-cap fa-fw"}), " Edward Cheung")
 						)
 					)
 				)				
@@ -36187,16 +36191,13 @@ var ProjectRow = React.createClass({displayName: "ProjectRow",
   },
   
   getModalButtons: function(project) {
-    var modalButtons = [];
-    
+    var modalButtons = [];    
     if (project.hasOwnProperty('link')) {
       modalButtons.push(React.createElement(Button, {href: project.link, target: "blank"}, React.createElement("i", {className: "fa fa-cog"}), " Demo"))
-    }
-    
+    };    
     if (project.hasOwnProperty('git')) {
       modalButtons.push(React.createElement(Button, {href: project.git, target: "blank"}, React.createElement("i", {className: "fa fa-github"}), " GitHub"))
-    }
-    
+    };    
     this.setState({
       projectButtons: modalButtons,
     });
@@ -36205,9 +36206,11 @@ var ProjectRow = React.createClass({displayName: "ProjectRow",
   render: function() {
     var projectList = this.props.projects.map(function(project, i) {
       return(
-        React.createElement("div", {className: "col-md-4 col-sm-6 col-xs-12 project-box project-slideup", key: i+1}, 
-					React.createElement("span", null, project.title), 
-					React.createElement("img", {src: project.thumb, className: "project-thumb", onClick: this.openModal.bind(null, project)})
+        React.createElement("div", {className: "col-md-4 col-sm-6 col-xs-12 project-col project-slideup", key: i+1}, 
+					React.createElement("div", {className: "project-box"}, 						
+						React.createElement("img", {src: project.thumb, className: "project-thumb", onClick: this.openModal.bind(null, project)}), 
+						React.createElement("span", null, project.title)
+					)
         )
       );
     }.bind(this));    
