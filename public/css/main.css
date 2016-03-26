@@ -31,11 +31,6 @@ h1 {
   z-index: 10;
 }
 
-#intro-box {
-	background-color: #444;
-	color: #DDD;
-}
-
 h1 {
   display: inline-block;
   padding: 5px 10px 5px 10px;
@@ -95,6 +90,13 @@ h1 {
   top: 160px;
   border-radius: 100%;
   border: 8px solid #EEE;
+}
+
+#intro-box {
+	background-color: #444;
+	padding: 3em;
+	height: 5em;
+	color: #DDD;
 }
 
 #portfolio-box {

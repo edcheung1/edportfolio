@@ -92,7 +92,9 @@ var IntroBox = React.createClass({
 			<div id="intro-box">
 				<div className="container">
 					<div className="col-sm-6 text-right">
-						ldfjlasjflksdjlfjaslfj
+						<a href="./public/data/certificates/mongodbcert.pdf">
+							<Button bsStyle="primary">MongoDB</Button>
+						</a>
 					</div>
 					<div className="col-sm-6 text-left">
 						dlsajflsajflksdfj
