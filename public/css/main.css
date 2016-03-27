@@ -118,14 +118,14 @@ h1 {
 
 #portfolio-box {
   position: relative;
-  padding: 1em 0 2em 0;
+  padding: 1em 0 3em 0;
 }
 
 #portfolio-menu {
   position: absolute;
   text-align: left;
   display: inline-block;
-  top: 2.5em;
+  top: 4em;
   left: 0;
   z-index: 11;
 	min-width: 13em;
@@ -263,7 +263,7 @@ h1 {
 	position: relative;
   background-color: #222;
   color: #DDD;
-  padding: 1em;
+  padding: 1em 0 3em 0;
 }
 
 #contact-box a {

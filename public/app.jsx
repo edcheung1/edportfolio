@@ -3,15 +3,18 @@ var ReactDOM = require('react-dom');
 var ReactBootstrap = require('react-bootstrap');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 var TimerMixin = require('react-timer-mixin');
+var ReactSticky = require('react-sticky');
 
 var allProjects = require('./data/projects.json');
 var ascending = true;
 
-var Modal = ReactBootstrap.Modal;
-var ButtonToolbar = ReactBootstrap.ButtonToolbar;
-var Button = ReactBootstrap.Button;
-var Navbar = ReactBootstrap.Navbar, Nav = ReactBootstrap.Nav, NavItem = ReactBootstrap.NavItem;
-var NavDropdown = ReactBootstrap.NavDropdown, MenuItem = ReactBootstrap.MenuItem;
+// var Modal = ReactBootstrap.Modal;
+// var ButtonToolbar = ReactBootstrap.ButtonToolbar;
+// var Button = ReactBootstrap.Button;
+// var Navbar = ReactBootstrap.Navbar, Nav = ReactBootstrap.Nav, NavItem = ReactBootstrap.NavItem;
+// var NavDropdown = ReactBootstrap.NavDropdown, MenuItem = ReactBootstrap.MenuItem;
+const {Modal, ButtonToolbar, Button, Navbar, Nav, NavItem, NavDropdown, MenuItem} = ReactBootstrap;
+const {StickyContainer, Sticky} = ReactSticky;
 
 /*
 	React class for about container
@@ -143,7 +146,7 @@ var PortfolioBox = React.createClass({
   
   sortDate: function() {
 		if(this.state.projectList.length <= 0) {
-			setFilter(this.state.currFilter);
+			return;
 		};
 		
 		var sortedProjects = this.state.projectList.sort(compareDate);
@@ -198,51 +201,56 @@ var PortfolioBox = React.createClass({
   render: function() {    
     return(
         <div id="portfolio-box">
-					<div className="navAnchor" id="portfolio"></div>
-          <h2>Portfolio</h2>
-          <div id="portfolio-menu">
-            <div onClick={this.setFilter.bind(this, 'fav')}>
-							<div>
-								<i className='fa fa-heart fa-fw' /><span>&nbsp;My Favorites</span>
+					<StickyContainer>
+						<div className="navAnchor" id="portfolio"></div>
+						<h2>Portfolio</h2>
+						<Sticky topOffset={-74}>
+							<div id="portfolio-menu">
+								<div onClick={this.setFilter.bind(this, 'fav')}>
+									<div>
+										<i className='fa fa-heart fa-fw' /><span>&nbsp;My Favorites</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'front')}>
+									<div>
+										<i className="fa fa-desktop fa-fw" /><span>&nbsp;Front-End</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'back')}>
+									<div>
+										<i className="fa fa-database fa-fw" /><span>&nbsp;Back-End</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'full')}>
+									<div>
+										<i className="fa fa-exchange fa-fw" /><span>&nbsp;Full-Stack</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'data')}>
+									<div>
+										<i className="fa fa-bar-chart fa-fw" /><span>&nbsp;Data Visuals</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'other')}>
+									<div>
+										<i className='fa fa-cogs fa-fw' /><span>&nbsp;Other</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(this,'all')}>
+									<div>
+										<i className='fa fa-asterisk fa-fw' /><span>&nbsp;All</span>
+									</div>
+								</div>
 							</div>
-            </div>
-            <div onClick={this.setFilter.bind(null,'front')}>
-							<div>
-								<i className="fa fa-desktop fa-fw" /><span>&nbsp;Front-End</span>
-							</div>
-            </div>
-            <div onClick={this.setFilter.bind(null,'back')}>
-							<div>
-								<i className="fa fa-database fa-fw" /><span>&nbsp;Back-End</span>
-							</div>
-            </div>
-						<div onClick={this.setFilter.bind(null,'full')}>
-							<div>
-								<i className="fa fa-exchange fa-fw" /><span>&nbsp;Full-Stack</span>
-							</div>
-            </div>
-            <div onClick={this.setFilter.bind(null,'data')}>
-							<div>
-								<i className="fa fa-bar-chart fa-fw" /><span>&nbsp;Data Visuals</span>
-							</div>
-            </div>
-            <div onClick={this.setFilter.bind(null,'other')}>
-							<div>
-								<i className='fa fa-cogs fa-fw' /><span>&nbsp;Other</span>
-							</div>
-            </div>
-            <div onClick={this.setFilter.bind(this,'all')}>
-							<div>
-								<i className='fa fa-asterisk fa-fw' /><span>&nbsp;All</span>
-							</div>
-            </div>
-          </div>
-          <div className="container">
-            <ProjectRow projects={this.state.projectList} />
-          </div>
-          <div className="btn-group">            
-            <Button onClick={this.sortDate}>Sort by Date</Button>
-          </div>
+						</Sticky>
+					
+						<div className="container">
+							<ProjectRow projects={this.state.projectList} />
+						</div>
+						<div className="btn-group">            
+							<Button onClick={this.sortDate}>Sort by Date</Button>
+						</div>
+					</StickyContainer>
         </div>
     )
   }  
