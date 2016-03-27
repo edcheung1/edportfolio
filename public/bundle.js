@@ -36210,11 +36210,6 @@ var ReactSticky = require('react-sticky');
 var allProjects = require('./data/projects.json');
 var ascending = true;
 
-// var Modal = ReactBootstrap.Modal;
-// var ButtonToolbar = ReactBootstrap.ButtonToolbar;
-// var Button = ReactBootstrap.Button;
-// var Navbar = ReactBootstrap.Navbar, Nav = ReactBootstrap.Nav, NavItem = ReactBootstrap.NavItem;
-// var NavDropdown = ReactBootstrap.NavDropdown, MenuItem = ReactBootstrap.MenuItem;
 const {Modal, ButtonToolbar, Button, Navbar, Nav, NavItem, NavDropdown, MenuItem} = ReactBootstrap;
 const {StickyContainer, Sticky} = ReactSticky;
 
@@ -36298,8 +36293,13 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 					React.createElement("div", {className: "col-sm-6 text-left"}, 
 						React.createElement("div", {className: "col-md-12", id: "hello-box"}, 
 							React.createElement("div", {className: "navAnchor", id: "about"}), 
-							React.createElement("h2", null, "Hello!"), React.createElement("br", null), 
-							"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+							React.createElement("h2", null, "Hello!"), 
+							React.createElement("h3", null, "My name is Ed. I'm a self-taught full-stack developer and tech aficionado."), React.createElement("br", null), 
+							React.createElement("p", null, 
+							"I love innovation and being on the forefront of groundbreaking technology. In addition, I have an eye for spotting inefficient processes and revamping it into faster, more streamlined systems (a holdover from my engineering days). Building and creating, both virtually and physically, has always been my passion.", 
+							React.createElement("br", null), React.createElement("br", null), 
+							"I'm currently based in New Orleans, LA and planning to relocate to Seattle, WA."
+							)
 						)
 					), 
 					React.createElement("div", {className: "col-sm-6 text-left"}, 
@@ -36598,6 +36598,14 @@ ReactDOM.render(
   React.createElement(Main, null),
   document.getElementById('react-hook')
 )
+
+$('NavItem').click(function () {
+  var $href = $(this).attr('href');
+  $('body').stop().animate({
+    scrollTop: $($href).offset().top
+  }, 1000);
+  return false;
+});
 
 function compareDate(a,b) {
   var aDate = new Date(a.date);

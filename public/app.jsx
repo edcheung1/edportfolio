@@ -8,11 +8,6 @@ var ReactSticky = require('react-sticky');
 var allProjects = require('./data/projects.json');
 var ascending = true;
 
-// var Modal = ReactBootstrap.Modal;
-// var ButtonToolbar = ReactBootstrap.ButtonToolbar;
-// var Button = ReactBootstrap.Button;
-// var Navbar = ReactBootstrap.Navbar, Nav = ReactBootstrap.Nav, NavItem = ReactBootstrap.NavItem;
-// var NavDropdown = ReactBootstrap.NavDropdown, MenuItem = ReactBootstrap.MenuItem;
 const {Modal, ButtonToolbar, Button, Navbar, Nav, NavItem, NavDropdown, MenuItem} = ReactBootstrap;
 const {StickyContainer, Sticky} = ReactSticky;
 
@@ -96,8 +91,13 @@ var IntroBox = React.createClass({
 					<div className="col-sm-6 text-left">
 						<div className="col-md-12" id="hello-box">
 							<div className="navAnchor" id="about"></div>
-							<h2>Hello!</h2><br/>						
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<h2>Hello!</h2>
+							<h3>My name is Ed. I'm a self-taught full-stack developer and tech aficionado.</h3><br/>
+							<p>
+							I love innovation and being on the forefront of groundbreaking technology. In addition, I have an eye for spotting inefficient processes and revamping it into faster, more streamlined systems (a holdover from my engineering days). Building and creating, both virtually and physically, has always been my passion.
+							<br/><br/>
+							I'm currently based in New Orleans, LA and planning to relocate to Seattle, WA.
+							</p>
 						</div>
 					</div>
 					<div className="col-sm-6 text-left">
@@ -396,6 +396,14 @@ ReactDOM.render(
   <Main />,
   document.getElementById('react-hook')
 )
+
+$('NavItem').click(function () {
+  var $href = $(this).attr('href');
+  $('body').stop().animate({
+    scrollTop: $($href).offset().top
+  }, 1000);
+  return false;
+});
 
 function compareDate(a,b) {
   var aDate = new Date(a.date);
