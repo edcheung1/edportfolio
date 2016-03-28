@@ -87,10 +87,10 @@ var IntroBox = React.createClass({
 	render: function() {
 		return(
 			<div id="intro-box">				
+				<div className="navAnchor" id="about" />
 				<div className="container">
 					<div className="col-sm-6 text-left">
 						<div className="col-md-12" id="hello-box">
-							<div className="navAnchor" id="about"></div>
 							<h2>Hello!</h2>
 							<h3>My name is Ed. I'm a self-taught full-stack developer and tech aficionado.</h3><br/>
 							<p>
@@ -202,7 +202,7 @@ var PortfolioBox = React.createClass({
     return(
         <div id="portfolio-box">
 					<StickyContainer>
-						<div className="navAnchor" id="portfolio"></div>
+						<div className="navAnchor" id="portfolio" />
 						<h2>Portfolio</h2>
 						<Sticky topOffset={-74}>
 							<div id="portfolio-menu">
@@ -322,9 +322,13 @@ var ProjectRow = React.createClass({
             {this.state.projectTitle}
           </Modal.Header>
           <Modal.Body>
-            <img src={this.state.projectImg} className='modal-img pull-left'/>
-            <strong>Description: </strong><p>{this.state.projectDesc}</p>
-            <strong>Completed: </strong>{this.state.projectDate}
+						<div className="col-sm-6">
+							<img src={this.state.projectImg} className='modal-img pull-left'/>
+						</div>
+						<div className="col-sm-6">
+							<strong>Description: </strong><div dangerouslySetInnerHTML={{__html: this.state.projectDesc}} /><br />
+							<strong>Completed: </strong>{this.state.projectDate}
+						</div>
           </Modal.Body>
           <Modal.Footer>
             <ButtonToolbar>
@@ -346,7 +350,7 @@ var ContactBox = React.createClass({
     return(
       <div id="contact-box">
 				<h2>Contact</h2><br/>
-				<div className="navAnchor" id="contact"></div>
+				<div className="navAnchor" id="contact" />
         <a href='https://github.com/edcheung1' target='_blank'>
           <i className="fa fa-github fa-2x fa-fw" /></a>
         <a href='https://www.linkedin.com/in/edcheung1991' target='_blank'>

@@ -248,13 +248,20 @@ h1 {
 }
 
 .modal-body {
+	position: relative;
+	display: inline-block;
   min-height: 215px;
   text-align: left;
 }
 
-.modal-img {
+.modal-body {
+	width: 100%;
+}
+
+.modal-body  img {
+	position: absolute;
+	left: 0;
   border: 2px solid black;
-  margin-right: 10px;
 }
 
 /* Styling for contact-box */

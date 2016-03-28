@@ -36289,10 +36289,10 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 	render: function() {
 		return(
 			React.createElement("div", {id: "intro-box"}, 				
+				React.createElement("div", {className: "navAnchor", id: "about"}), 
 				React.createElement("div", {className: "container"}, 
 					React.createElement("div", {className: "col-sm-6 text-left"}, 
 						React.createElement("div", {className: "col-md-12", id: "hello-box"}, 
-							React.createElement("div", {className: "navAnchor", id: "about"}), 
 							React.createElement("h2", null, "Hello!"), 
 							React.createElement("h3", null, "My name is Ed. I'm a self-taught full-stack developer and tech aficionado."), React.createElement("br", null), 
 							React.createElement("p", null, 
@@ -36524,9 +36524,13 @@ var ProjectRow = React.createClass({displayName: "ProjectRow",
             this.state.projectTitle
           ), 
           React.createElement(Modal.Body, null, 
-            React.createElement("img", {src: this.state.projectImg, className: "modal-img pull-left"}), 
-            React.createElement("strong", null, "Description: "), React.createElement("p", null, this.state.projectDesc), 
-            React.createElement("strong", null, "Completed: "), this.state.projectDate
+						React.createElement("div", {className: "col-sm-6"}, 
+							React.createElement("img", {src: this.state.projectImg, className: "modal-img pull-left"})
+						), 
+						React.createElement("div", {className: "col-sm-6"}, 
+							React.createElement("strong", null, "Description: "), React.createElement("div", {dangerouslySetInnerHTML: {__html: this.state.projectDesc}}), React.createElement("br", null), 
+							React.createElement("strong", null, "Completed: "), this.state.projectDate
+						)
           ), 
           React.createElement(Modal.Footer, null, 
             React.createElement(ButtonToolbar, null, 
@@ -36629,10 +36633,13 @@ function compareDate(a,b) {
 
 },{"./data/projects.json":415,"react":413,"react-addons-css-transition-group":2,"react-bootstrap":74,"react-dom":247,"react-sticky":249,"react-timer-mixin":251}],415:[function(require,module,exports){
 module.exports=[
-	{title: 'My Portfolio', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458516387/Ed_Portfolio_hd1rck.png', link: 'http://edcheung-portfolio.herokuapp.com/', git: 'https://github.com/edcheung1/edportfolio', date:'3/25/16', tags: ['fav', 'full']},
-	{title: 'Simon', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', desc: 'A remake of the classic Simon® game, test your memory and reflexes and try to reach a score of 20! Activate strict mode to make the game reset completely on a mistake, or deactivate it so it continues where you left off.', date: '1/5/16', tags: ['fav', 'front']},
+	{title: 'My Portfolio', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458516387/Ed_Portfolio_hd1rck.png', link: 'http://edcheung-portfolio.herokuapp.com/', git: 'https://github.com/edcheung1/edportfolio', date:'3/27/16', tags: ['fav', 'full'],
+		desc: 'Welcome to my portfolio! Made with React.js, this site follows the latest responsive web design principles and has been refactored to maximize code readability and maintainability (see GitHub source for details). This portfolio is deployed on the Heroku Node.js driver and is hosted on Google Domains'},
+	{title: 'Simon', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', date: '1/5/16', tags: ['fav', 'front'],
+		desc: 'A remake of the classic Simon® game, test your memory and reflexes and try to reach a score of 20! Activate strict mode to make the game reset completely on a mistake, or deactivate it so it continues where you left off.'},
 	{title: 'Recipe Box', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link: 'http://codepen.io/edcheung/pen/bExZzv', date: '2/17/16', tags: ['fav', 'front']},
-	{title: 'MongoMart', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'full']},
+	{title: 'MongoMart', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'full'],
+		desc: 'Created as the final project of <a href="https://university.mongodb.com/courses/M101JS/about" target="_blank">M101JS: MongoDB for Node.js Developers</a>. The front-end was provided while I completed the MongoDB back-end to create a functional query, cart, and review system. Try adding your own review!'},
 	{title: 'GDP Data Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['fav', 'data']},
 	{title: 'Tic-Tac-Toe', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_north,h_175,w_275/v1457898738/Ed_TicTacToe_mbchhm.png', link: 'http://codepen.io/edcheung/pen/PZNpbQ', date: '12/22/15', tags: ['fav', 'front']},
 	{title: 'Matrix Structural Analysis Script', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1459027327/Ed_MatrixStructure_hhtt7v.png', date: '10/27/15', tags: ['fav', 'other']},
