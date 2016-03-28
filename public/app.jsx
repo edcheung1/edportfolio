@@ -206,7 +206,7 @@ var PortfolioBox = React.createClass({
 						<h2>Portfolio</h2>
 						<Sticky topOffset={-74}>
 							<div id="portfolio-menu">
-								<div onClick={this.setFilter.bind(this, 'fav')}>
+								<div onClick={this.setFilter.bind(null, 'fav')}>
 									<div>
 										<i className='fa fa-heart fa-fw' /><span>&nbsp;My Favorites</span>
 									</div>
@@ -236,7 +236,7 @@ var PortfolioBox = React.createClass({
 										<i className='fa fa-cogs fa-fw' /><span>&nbsp;Other</span>
 									</div>
 								</div>
-								<div onClick={this.setFilter.bind(this,'all')}>
+								<div onClick={this.setFilter.bind(null,'all')}>
 									<div>
 										<i className='fa fa-asterisk fa-fw' /><span>&nbsp;All</span>
 									</div>
@@ -360,29 +360,45 @@ var ContactBox = React.createClass({
   }  
 })
 
-var Main = React.createClass({	
-  render: function() {
-    const navbarInstance = (
-      <Navbar inverse fixedTop>
+var NavbarBox = React.createClass({
+	smoothScroll: function(anchor, e) {
+		e.preventDefault();
+		
+		$('html, body').animate({
+			scrollTop: $(anchor).offset().top
+		}, 500, function(){
+			window.location.hash = anchor;
+		});
+	},
+	
+	render: function() {
+		return (
+			<Navbar inverse fixedTop>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">Ed Cheung</a>
+            <a href="#" onClick={this.smoothScroll.bind(null, '#top')}>Ed Cheung</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#about">About</NavItem>
-            <NavItem eventKey={2} href="#portfolio">Portfolio</NavItem>
-            <NavItem eventKey={3} href="#contact">Contact</NavItem>
+            <NavItem eventKey={1} onClick={this.smoothScroll.bind(null, '#about')}>About</NavItem>
+            <NavItem eventKey={2} onClick={this.smoothScroll.bind(null, '#portfolio')}>Portfolio</NavItem>
+            <NavItem eventKey={3} onClick={this.smoothScroll.bind(null, '#contact')}>Contact</NavItem>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
-    );
-    
+      </Navbar>			
+		);	
+	}
+})
+
+var Main = React.createClass({
+	
+  render: function() {
     return (
       <div>
-        {navbarInstance}        
+				<div id="top" />
+        <NavbarBox />			
         <AboutBox />
 				<IntroBox />
         <PortfolioBox />
@@ -396,14 +412,6 @@ ReactDOM.render(
   <Main />,
   document.getElementById('react-hook')
 )
-
-$('NavItem').click(function () {
-  var $href = $(this).attr('href');
-  $('body').stop().animate({
-    scrollTop: $($href).offset().top
-  }, 1000);
-  return false;
-});
 
 function compareDate(a,b) {
   var aDate = new Date(a.date);

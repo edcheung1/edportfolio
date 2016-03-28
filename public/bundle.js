@@ -36408,7 +36408,7 @@ var PortfolioBox = React.createClass({displayName: "PortfolioBox",
 						React.createElement("h2", null, "Portfolio"), 
 						React.createElement(Sticky, {topOffset: -74}, 
 							React.createElement("div", {id: "portfolio-menu"}, 
-								React.createElement("div", {onClick: this.setFilter.bind(this, 'fav')}, 
+								React.createElement("div", {onClick: this.setFilter.bind(null, 'fav')}, 
 									React.createElement("div", null, 
 										React.createElement("i", {className: "fa fa-heart fa-fw"}), React.createElement("span", null, " My Favorites")
 									)
@@ -36438,7 +36438,7 @@ var PortfolioBox = React.createClass({displayName: "PortfolioBox",
 										React.createElement("i", {className: "fa fa-cogs fa-fw"}), React.createElement("span", null, " Other")
 									)
 								), 
-								React.createElement("div", {onClick: this.setFilter.bind(this,'all')}, 
+								React.createElement("div", {onClick: this.setFilter.bind(null,'all')}, 
 									React.createElement("div", null, 
 										React.createElement("i", {className: "fa fa-asterisk fa-fw"}), React.createElement("span", null, " All")
 									)
@@ -36562,29 +36562,45 @@ var ContactBox = React.createClass({displayName: "ContactBox",
   }  
 })
 
-var Main = React.createClass({displayName: "Main",	
-  render: function() {
-    const navbarInstance = (
-      React.createElement(Navbar, {inverse: true, fixedTop: true}, 
+var NavbarBox = React.createClass({displayName: "NavbarBox",
+	smoothScroll: function(anchor, e) {
+		e.preventDefault();
+		
+		$('html, body').animate({
+			scrollTop: $(anchor).offset().top
+		}, 500, function(){
+			window.location.hash = anchor;
+		});
+	},
+	
+	render: function() {
+		return (
+			React.createElement(Navbar, {inverse: true, fixedTop: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement("a", {href: "#"}, "Ed Cheung")
+            React.createElement("a", {href: "#", onClick: this.smoothScroll.bind(null, '#top')}, "Ed Cheung")
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 
         React.createElement(Navbar.Collapse, null, 
           React.createElement(Nav, {pullRight: true}, 
-            React.createElement(NavItem, {eventKey: 1, href: "#about"}, "About"), 
-            React.createElement(NavItem, {eventKey: 2, href: "#portfolio"}, "Portfolio"), 
-            React.createElement(NavItem, {eventKey: 3, href: "#contact"}, "Contact")
+            React.createElement(NavItem, {eventKey: 1, onClick: this.smoothScroll.bind(null, '#about')}, "About"), 
+            React.createElement(NavItem, {eventKey: 2, onClick: this.smoothScroll.bind(null, '#portfolio')}, "Portfolio"), 
+            React.createElement(NavItem, {eventKey: 3, onClick: this.smoothScroll.bind(null, '#contact')}, "Contact")
           )
         )
-      )
-    );
-    
+      )			
+		);	
+	}
+})
+
+var Main = React.createClass({displayName: "Main",
+	
+  render: function() {
     return (
       React.createElement("div", null, 
-        navbarInstance, 
+				React.createElement("div", {id: "top"}), 
+        React.createElement(NavbarBox, null), 			
         React.createElement(AboutBox, null), 
 				React.createElement(IntroBox, null), 
         React.createElement(PortfolioBox, null), 
@@ -36598,14 +36614,6 @@ ReactDOM.render(
   React.createElement(Main, null),
   document.getElementById('react-hook')
 )
-
-$('NavItem').click(function () {
-  var $href = $(this).attr('href');
-  $('body').stop().animate({
-    scrollTop: $($href).offset().top
-  }, 1000);
-  return false;
-});
 
 function compareDate(a,b) {
   var aDate = new Date(a.date);
