@@ -41,10 +41,10 @@ h1 {
 }
 
 .style-bg {
-  position: aboslute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: -1;
   width: 100%;
   height: 100%;
   background-height: 100%;
@@ -119,6 +119,7 @@ h1 {
 #portfolio-box {
   position: relative;
   padding: 1em 0 2em 0;
+	background-color: #DDD;
 }
 
 #portfolio-menu {
