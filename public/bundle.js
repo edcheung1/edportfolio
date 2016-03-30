@@ -36296,7 +36296,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 							React.createElement("h2", null, "Hello!"), 
 							React.createElement("h3", null, "My name is Ed. I'm a self-taught full-stack developer and tech aficionado."), React.createElement("br", null), 
 							React.createElement("p", null, 
-							"I love innovation and being on the forefront of groundbreaking technology. In addition, I have an eye for spotting inefficient processes and revamping it into faster, more streamlined systems (a holdover from my engineering days). Building and creating, both virtually and physically, has always been my passion.", 
+							"I love innovation and being on the forefront of groundbreaking technology. I have an eye for spotting inefficient processes and revamping it into faster, more streamlined systems. Building and creating, virtually or physically, has always been my passion.", 
 							React.createElement("br", null), React.createElement("br", null), 
 							"I'm currently based in New Orleans, LA and planning to relocate to Seattle, WA."
 							)
