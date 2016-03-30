@@ -94,7 +94,7 @@ var IntroBox = React.createClass({
 							<h2>Hello!</h2>
 							<h3>My name is Ed. I'm a self-taught full-stack developer and tech aficionado.</h3><br/>
 							<p>
-							I love innovation and being on the forefront of groundbreaking technology. In addition, I have an eye for spotting inefficient processes and revamping it into faster, more streamlined systems (a holdover from my engineering days). Building and creating, both virtually and physically, has always been my passion.
+							I love innovation and being on the forefront of groundbreaking technology. I have an eye for spotting inefficient processes and revamping it into faster, more streamlined systems (a holdover from my engineering days). Building and creating, virtually or physically, has always been my passion.
 							<br/><br/>
 							I'm currently based in New Orleans, LA and planning to relocate to Seattle, WA.
 							</p>
