@@ -3,15 +3,13 @@ var ReactDOM = require('react-dom');
 var ReactBootstrap = require('react-bootstrap');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 var TimerMixin = require('react-timer-mixin');
+var ReactSticky = require('react-sticky');
 
 var allProjects = require('./data/projects.json');
 var ascending = true;
 
-var Modal = ReactBootstrap.Modal;
-var ButtonToolbar = ReactBootstrap.ButtonToolbar;
-var Button = ReactBootstrap.Button;
-var Navbar = ReactBootstrap.Navbar, Nav = ReactBootstrap.Nav, NavItem = ReactBootstrap.NavItem;
-var NavDropdown = ReactBootstrap.NavDropdown, MenuItem = ReactBootstrap.MenuItem;
+const {Modal, ButtonToolbar, Button, Navbar, Nav, NavItem, NavDropdown, MenuItem} = ReactBootstrap;
+const {StickyContainer, Sticky} = ReactSticky;
 
 /*
 	React class for about container
@@ -61,8 +59,7 @@ var AboutBox = React.createClass({
   
   render: function() {
     return(
-      <div id='about-box'>
-				<div className="navAnchor" id="about"></div>
+      <div id='about-box'>				
         <div id='about-inner'>
           <div id='about-header'>
             <h1>ED CHEUNG</h1>
@@ -83,6 +80,54 @@ var AboutBox = React.createClass({
 })
 
 /*
+	React class for introduction container
+*/
+
+var IntroBox = React.createClass({
+	render: function() {
+		return(
+			<div id="intro-box">				
+				<div className="navAnchor" id="about" />
+				<div className="container">
+					<div className="col-sm-6 text-left">
+						<div className="col-md-12" id="hello-box">
+							<h2>Hello!</h2>
+							<h3>My name is Ed. I'm a self-taught full-stack developer and tech aficionado.</h3><br/>
+							<p>
+							I love innovation and being on the forefront of groundbreaking technology. I have an eye for spotting inefficient processes and revamping it into faster, more streamlined systems. Building and creating, virtually or physically, has always been my passion.
+							<br/><br/>
+							I'm currently based in New Orleans, LA and planning to relocate to Seattle, WA.
+							</p>
+						</div>
+					</div>
+					<div className="col-sm-6 text-left">
+						<div className="col-md-12" id="cert-box">
+							<h2>Certificates</h2>
+							<a href="./public/data/certificates/mongodbcert.pdf" target="_blank">
+								<Button><i className="fa fa-leaf fa-fw" />&nbsp;MongoDB for Node.js Developers</Button>
+							</a><br/><br/>
+							<a href="https://www.freecodecamp.com/edcheung1/front-end-certification" target="_blank">
+								<Button><i className="fa fa-fire fa-fw" />&nbsp;FreeCodeCamp Front-End</Button>
+							</a><br/><br/>
+							<a href="./public/data/certificates/java_mooc1.pdf" target="_blank">
+								<Button><i className="fa fa-coffee fa-fw" />&nbsp;OOP with Java Part 1</Button>
+							</a><br/><br/>
+							<a href="./public/data/certificates/java_mooc2.pdf" target="_blank">
+								<Button><i className="fa fa-coffee fa-fw" />&nbsp;OOP with Java Part 2</Button>
+							</a><br/><br/>
+							<h2>Resumé</h2>
+							<a href="./public/data/certificates/EdwardCheungResume.pdf" target="_blank">
+								<Button><i className="fa fa-graduation-cap fa-fw" />&nbsp;Edward Cheung</Button>
+							</a>
+						</div>
+					</div>
+				</div>				
+			</div>
+		);
+	}	
+})
+
+/*
 	React class for portfolio container
 */
 
@@ -100,11 +145,22 @@ var PortfolioBox = React.createClass({
   },
   
   sortDate: function() {
-    var sortedProjects = this.state.projectList.sort(compareDate);
-    this.setState({
-      projectList: sortedProjects
-    })
-    ascending = !ascending;
+		if(this.state.projectList.length <= 0) {
+			return;
+		};
+		
+		var sortedProjects = this.state.projectList.sort(compareDate);
+		
+		this.setState({
+			projectList: []
+		});
+		
+		this.setTimeout(function() {			
+			this.setState({
+				projectList: sortedProjects
+			})
+			ascending = !ascending;			
+		}, 300);    
   },
   
   setFilter: function(filter, e) {
@@ -145,51 +201,56 @@ var PortfolioBox = React.createClass({
   render: function() {    
     return(
         <div id="portfolio-box">
-					<div className="navAnchor" id="portfolio"></div>
-          <h3>Portfolio</h3>
-          <div id="portfolio-menu">
-            <div onClick={this.setFilter.bind(this, 'fav')}>
-							<div>
-								<i className='fa fa-heart fa-fw' /><span>&nbsp;My Favorites</span>
+					<StickyContainer>
+						<div className="navAnchor" id="portfolio" />
+						<h2>Portfolio</h2>
+						<Sticky topOffset={-74}>
+							<div id="portfolio-menu">
+								<div onClick={this.setFilter.bind(null, 'fav')}>
+									<div>
+										<i className='fa fa-heart fa-fw' /><span>&nbsp;My Favorites</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'front')}>
+									<div>
+										<i className="fa fa-desktop fa-fw" /><span>&nbsp;Front-End</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'back')}>
+									<div>
+										<i className="fa fa-database fa-fw" /><span>&nbsp;Back-End</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'full')}>
+									<div>
+										<i className="fa fa-exchange fa-fw" /><span>&nbsp;Full-Stack</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'data')}>
+									<div>
+										<i className="fa fa-bar-chart fa-fw" /><span>&nbsp;Data Visuals</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'other')}>
+									<div>
+										<i className='fa fa-cogs fa-fw' /><span>&nbsp;Other</span>
+									</div>
+								</div>
+								<div onClick={this.setFilter.bind(null,'all')}>
+									<div>
+										<i className='fa fa-asterisk fa-fw' /><span>&nbsp;All</span>
+									</div>
+								</div>
 							</div>
-            </div>
-            <div onClick={this.setFilter.bind(null,'front')}>
-							<div>
-								<i className="fa fa-desktop fa-fw" /><span>&nbsp;Front-End</span>
-							</div>
-            </div>
-            <div onClick={this.setFilter.bind(null,'back')}>
-							<div>
-								<i className="fa fa-database fa-fw" /><span>&nbsp;Back-End</span>
-							</div>
-            </div>
-						<div onClick={this.setFilter.bind(null,'full')}>
-							<div>
-								<i className="fa fa-exchange fa-fw" /><span>&nbsp;Full-Stack</span>
-							</div>
-            </div>
-            <div onClick={this.setFilter.bind(null,'data')}>
-							<div>
-								<i className="fa fa-bar-chart fa-fw" /><span>&nbsp;Data Visuals</span>
-							</div>
-            </div>
-            <div onClick={this.setFilter.bind(null,'other')}>
-							<div>
-								<i className='fa fa-cogs fa-fw' /><span>&nbsp;Other</span>
-							</div>
-            </div>
-            <div onClick={this.setFilter.bind(this,'all')}>
-							<div>
-								<i className='fa fa-asterisk fa-fw' /><span>&nbsp;All</span>
-							</div>
-            </div>
-          </div>
-          <div className="container">
-            <ProjectRow projects={this.state.projectList} />
-          </div>
-          <div className="btn-group">            
-            <Button onClick={this.sortDate}>Sort by Date</Button>
-          </div>
+						</Sticky>
+					
+						<div className="container">
+							<ProjectRow projects={this.state.projectList} />
+						</div>
+						<div className="btn-group">            
+							<Button onClick={this.sortDate}>Sort by Date</Button>
+						</div>
+					</StickyContainer>
         </div>
     )
   }  
@@ -225,37 +286,26 @@ var ProjectRow = React.createClass({
   },
   
   getModalButtons: function(project) {
-    var modalButtons = [];
-    
+    var modalButtons = [];    
     if (project.hasOwnProperty('link')) {
       modalButtons.push(<Button href={project.link} target='blank'><i className="fa fa-cog"></i> Demo</Button>)
-    }
-    
+    };    
     if (project.hasOwnProperty('git')) {
       modalButtons.push(<Button href={project.git} target='blank'><i className="fa fa-github"></i> GitHub</Button>)
-    }
-    
+    };    
     this.setState({
       projectButtons: modalButtons,
     });
   },
-  
-  componentDidUpdate: function() {
-    $('.darken').hover(function() {
-      $(this).find('img').stop(true, true).fadeTo(250, .5);      
-    }, function() {
-      $(this).find('img').stop(true, true).fadeTo(250, 1);      
-    });
-  },   
-  
+
   render: function() {
     var projectList = this.props.projects.map(function(project, i) {
       return(
-        <div className="col-md-4 col-sm-6 col-xs-12 project-box project-slideup" key={i+1}>
-          <div className="project-title">{project.title}</div>
-          <a className="darken">            
-            <img src={project.thumb} className="project-thumb" onClick={this.openModal.bind(null, project)}/>
-          </a>
+        <div className="col-md-4 col-sm-6 col-xs-12 project-col project-slideup" key={i+1}>
+					<div className="project-box">						
+						<img src={project.thumb} className="project-thumb" onClick={this.openModal.bind(null, project)}/>
+						<span>{project.title}</span> 
+					</div>
         </div>
       );
     }.bind(this));    
@@ -272,9 +322,13 @@ var ProjectRow = React.createClass({
             {this.state.projectTitle}
           </Modal.Header>
           <Modal.Body>
-            <img src={this.state.projectImg} className='modal-img pull-left'/>
-            <strong>Description: </strong><p>{this.state.projectDesc}</p>
-            <strong>Completed: </strong>{this.state.projectDate}
+						<div className="col-sm-6">
+							<img src={this.state.projectImg} className='modal-img pull-left'/>
+						</div>
+						<div className="col-sm-6">
+							<strong>Description: </strong><div dangerouslySetInnerHTML={{__html: this.state.projectDesc}} /><br />
+							<strong>Completed: </strong>{this.state.projectDate}
+						</div>
           </Modal.Body>
           <Modal.Footer>
             <ButtonToolbar>
@@ -295,7 +349,8 @@ var ContactBox = React.createClass({
   render: function() {
     return(
       <div id="contact-box">
-				<div className="navAnchor" id="contact"></div>
+				<h2>Contact</h2><br/>
+				<div className="navAnchor" id="contact" />
         <a href='https://github.com/edcheung1' target='_blank'>
           <i className="fa fa-github fa-2x fa-fw" /></a>
         <a href='https://www.linkedin.com/in/edcheung1991' target='_blank'>
@@ -309,30 +364,47 @@ var ContactBox = React.createClass({
   }  
 })
 
-var Main = React.createClass({	
-  render: function() {
-    const navbarInstance = (
-      <Navbar inverse fixedTop>
+var NavbarBox = React.createClass({
+	smoothScroll: function(anchor, e) {
+		e.preventDefault();
+		
+		$('html, body').animate({
+			scrollTop: $(anchor).offset().top
+		}, 500, function(){
+			window.location.hash = anchor;
+		});
+	},
+	
+	render: function() {
+		return (
+			<Navbar inverse fixedTop>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">Ed Cheung</a>
+            <a href="#" onClick={this.smoothScroll.bind(null, '#top')}>Ed Cheung</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#about">About</NavItem>
-            <NavItem eventKey={2} href="#portfolio">Portfolio</NavItem>
-            <NavItem eventKey={3} href="#contact">Contact</NavItem>
+            <NavItem eventKey={1} onClick={this.smoothScroll.bind(null, '#about')}>About</NavItem>
+            <NavItem eventKey={2} onClick={this.smoothScroll.bind(null, '#portfolio')}>Portfolio</NavItem>
+            <NavItem eventKey={3} onClick={this.smoothScroll.bind(null, '#contact')}>Contact</NavItem>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
-    );
-    
+      </Navbar>			
+		);	
+	}
+})
+
+var Main = React.createClass({
+	
+  render: function() {
     return (
       <div>
-        {navbarInstance}        
+				<div id="top" />
+        <NavbarBox />			
         <AboutBox />
+				<IntroBox />
         <PortfolioBox />
         <ContactBox id="contactBox"/>
       </div>

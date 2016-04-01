@@ -13,8 +13,10 @@ h1 {
 
 .navAnchor {
 	position: absolute;
-	top: -5em;
+	top: -3.5em;
 }
+
+/* Styling for about-box */
 
 #about-box {
   position: relative;
@@ -39,10 +41,10 @@ h1 {
 }
 
 .style-bg {
-  position: aboslute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: -1;
   width: 100%;
   height: 100%;
   background-height: 100%;
@@ -51,17 +53,17 @@ h1 {
 }
 
 .dev-bg {
-  background-image: url("https://res.cloudinary.com/edcheung/image/upload/c_scale,w_1834/v1458332567/wood-coffee-iphone-notebook_fmk5sy.jpg");
+  background-image: url("/public/img/devbg.jpg");
   background-position: center top;
 }
 
 .engr-bg {
-  background-image: url("https://res.cloudinary.com/edcheung/image/upload/v1458331536/tJEPk_km6tiv.jpg");
+  background-image: url("/public/img/engrbg.jpg");
   background-position: 55% 80%;
 }
 
 .data-bg {
-  background-image: url("https://res.cloudinary.com/edcheung/image/upload/c_scale,w_1152/v1458345406/564803_r5jttw.jpg");
+  background-image: url("/public/img/databg.jpg");
 }
 
 #profile {
@@ -92,16 +94,39 @@ h1 {
   border: 8px solid #EEE;
 }
 
+/* Styling for intro-box */
+
+#intro-box {
+	padding: 1em 0 4em 0;
+	background-color: #222;
+	color: #DDD;
+}
+
+#hello-box {
+	background-color: #444;
+	top: 2em;
+	padding: 2em;
+}
+
+#cert-box {
+	background-color: #555;
+	top: 2em;
+	padding: 2em;
+}
+
+/* Styling for portfolio-box */
+
 #portfolio-box {
   position: relative;
-  padding-bottom: 2em;
+  padding: 1em 0 2em 0;
+	background-color: #DDD;
 }
 
 #portfolio-menu {
   position: absolute;
   text-align: left;
   display: inline-block;
-  top: 1em;
+  top: 4em;
   left: 0;
   z-index: 11;
 	min-width: 13em;
@@ -145,68 +170,51 @@ h1 {
 	padding-right: 3em;
 }
 
-a.darken {
-  display: inline-block;
-  background: black;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 0;
-}
-
-a.darken img {
-  display: relative;
+.project-col {
+	display: relative;
+  padding: 2em 0 2em 0;
 }
 
 .project-box {
-  padding-bottom: 20px;
+	position: relative;
+	max-width: 400px;
+	margin: 0 auto;
 }
 
-.project-title {
-  position: relative;
-  font-size: 16px;
-  white-space: nowrap;
+.project-box:hover > span {
+	opacity: .8;	
+}
+
+.project-box:hover > img {
+	opacity: .25;	
+}
+
+.project-box > span {
+	position: absolute;
+	text-align: center;
+	background: black;
+	top: 1em;
+	left: 0;
+	width: 100%;
+	font-size: 1.5em;
+	opacity: 0;
+	transition: opacity .5s;
+	color: #DDD;
+}
+
+.project-box > img {
+  display: relative;
+	opacity: 1;
+	transition: opacity .5s;
 }
 
 .project-thumb {
   border-radius: 5px;
+	border: 2px solid #444;
   width: 275px;
   height: 175px;
   overflow: hidden;
   cursor: pointer;
-}
-
-.modal {
-  top: 25%;
-}
-
-.modal-header {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.modal-body {
-  min-height: 215px;
-  text-align: left;
-}
-
-.modal-img {
-  border: 2px solid black;
-  margin-right: 10px;
-}
-
-#contact-box {
-	position: relative;
-  background-color: #222;
-  color: #DDD;
-  padding: 2em;
-}
-
-#contact-box a {
-  color: inherit;
-}
-
-#contact-box a:hover {
-  color: #888;
 }
 
 .project-enter {
@@ -229,4 +237,47 @@ a.darken img {
   opacity: 0.01;
 	transform: translate(0, 50px);
   transition: opacity 300ms ease-in, transform 500ms ease-in;
+}
+
+.modal {
+  top: 25%;
+}
+
+.modal-header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-body {
+	position: relative;
+	display: inline-block;
+  min-height: 215px;
+  text-align: left;
+}
+
+.modal-body {
+	width: 100%;
+}
+
+.modal-body  img {
+	position: absolute;
+	left: 0;
+  border: 2px solid black;
+}
+
+/* Styling for contact-box */
+
+#contact-box {
+	position: relative;
+  background-color: #222;
+  color: #DDD;
+  padding: 1em 0 3em 0;
+}
+
+#contact-box a {
+  color: inherit;
+}
+
+#contact-box a:hover {
+  color: #888;
 }
