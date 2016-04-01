@@ -16275,10 +16275,11 @@ var Sticky = function (_React$Component) {
 
     _this.onScroll = function () {
       var pageY = window.pageYOffset;
+      var origin = _this.getOrigin(pageY);
       var isSticky = _this.isSticky(pageY, _this.state.origin);
       var hasChanged = _this.state.isSticky !== isSticky;
 
-      _this.setState({ isSticky: isSticky });
+      _this.setState({ isSticky: isSticky, origin: origin });
       _this.context.container.updateOffset(isSticky ? _this.state.height : 0);
 
       if (hasChanged) _this.props.onStickyStateChange(isSticky);
@@ -16286,7 +16287,7 @@ var Sticky = function (_React$Component) {
 
     _this.onResize = function () {
       var height = _reactDom2.default.findDOMNode(_this).getBoundingClientRect().height;
-      var origin = _this.refs.placeholder.getBoundingClientRect().top + window.pageYOffset;
+      var origin = _this.getOrigin(window.pageYOffset);
       _this.setState({ height: height, origin: origin });
     };
 
@@ -16315,11 +16316,16 @@ var Sticky = function (_React$Component) {
       this.off(['resize', 'pageshow', 'load'], this.onResize);
     }
   }, {
+    key: 'getOrigin',
+    value: function getOrigin(pageY) {
+      return this.refs.placeholder.getBoundingClientRect().top + pageY;
+    }
+  }, {
     key: 'update',
     value: function update() {
       var height = _reactDom2.default.findDOMNode(this).getBoundingClientRect().height;
       var pageY = window.pageYOffset;
-      var origin = this.refs.placeholder.getBoundingClientRect().top + pageY;
+      var origin = this.getOrigin(pageY);
       var isSticky = this.isSticky(pageY, origin);
       this.setState({ height: height, origin: origin, isSticky: isSticky });
     }
@@ -36634,17 +36640,22 @@ function compareDate(a,b) {
 },{"./data/projects.json":415,"react":413,"react-addons-css-transition-group":2,"react-bootstrap":74,"react-dom":247,"react-sticky":249,"react-timer-mixin":251}],415:[function(require,module,exports){
 module.exports=[
 	{title: 'My Portfolio', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458516387/Ed_Portfolio_hd1rck.png', link: 'http://edcheung-portfolio.herokuapp.com/', git: 'https://github.com/edcheung1/edportfolio', date:'3/27/16', tags: ['fav', 'full'],
-		desc: 'Welcome to my portfolio! Made with React.js, this site follows the latest responsive web design principles and has been refactored to maximize code readability and maintainability (see GitHub source for details). This portfolio is deployed on the Heroku Node.js driver and is hosted on Google Domains'},
+		desc: 'Welcome to my portfolio! Made with React.js, this site follows the latest responsive web design principles and has been refactored to maximize code readability and maintainability (see GitHub source). This portfolio is deployed on the Heroku Node.js driver and hosted on Google Domains'},
 	{title: 'Simon', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', date: '1/5/16', tags: ['fav', 'front'],
-		desc: 'A remake of the classic Simon® game, test your memory and reflexes and try to reach a score of 20! Activate strict mode to make the game reset completely on a mistake, or deactivate it so it continues where you left off.'},
-	{title: 'Recipe Box', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link: 'http://codepen.io/edcheung/pen/bExZzv', date: '2/17/16', tags: ['fav', 'front']},
+		desc: 'A remake of the classic Simon® game, test your memory and reflexes and try to reach a score of 20. Activate strict mode to make the game reset completely on a mistake, or deactivate it so it continues where you left off.'},
+	{title: 'Recipe Box', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link: 'http://codepen.io/edcheung/pen/bExZzv', date: '2/17/16', tags: ['fav', 'front'],
+		desc: 'Pure React.js web application, allows the user to add, edit, or delete recipes and associated ingredients. Saves data to client-side local storage.'},
 	{title: 'MongoMart', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'full'],
 		desc: 'Created as the final project of <a href="https://university.mongodb.com/courses/M101JS/about" target="_blank">M101JS: MongoDB for Node.js Developers</a>. The front-end was provided while I completed the MongoDB back-end to create a functional query, cart, and review system. Try adding your own review!'},
-	{title: 'GDP Data Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['fav', 'data']},
-	{title: 'Tic-Tac-Toe', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_north,h_175,w_275/v1457898738/Ed_TicTacToe_mbchhm.png', link: 'http://codepen.io/edcheung/pen/PZNpbQ', date: '12/22/15', tags: ['fav', 'front']},
-	{title: 'Matrix Structural Analysis Script', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1459027327/Ed_MatrixStructure_hhtt7v.png', date: '10/27/15', tags: ['fav', 'other']},
+	{title: 'GDP Data Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['fav', 'data'],
+		desc: 'Pulls and displays US GDP from external JSON data. Visualization created using D3.js graphing functions.'},
+	{title: 'Tic-Tac-Toe', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_north,h_175,w_275/v1457898738/Ed_TicTacToe_mbchhm.png', link: 'http://codepen.io/edcheung/pen/PZNpbQ', date: '12/22/15', tags: ['fav', 'front'],
+		desc: 'Tic-tac-toe AI implemented using Minimax algorithm with internal scoring logged using bitwise manipulation. Graphics drawn using SVG methods.'},
+	{title: 'Matrix Structural Analysis Script', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1459027327/Ed_MatrixStructure_hhtt7v.png', date: '10/27/15', tags: ['fav', 'other'],
+		desc: 'Created to automate structural analyses for thousands of pipe supports with varying geometries. Implements the <a href="https://en.wikipedia.org/wiki/Direct_stiffness_method" target="_blank">Matrix Stiffness Method</a> as well as various matrix math functions using Excel VBA.'},
 	{title: 'Game of Life', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191410/Ed_GameOfLifeJava_lzwakq.png', date: '10/10/15', tags: ['other']},
-	{title: 'Worm Game', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191409/Ed_JavaWorm_n1igtk.png', date: '10/27/15', tags: ['fav', 'other']},
+	{title: 'Worm Game', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191409/Ed_JavaWorm_n1igtk.png', date: '10/27/15', tags: ['fav', 'other'],
+		desc: 'Created as final project of 12-week <a href="http://mooc.fi/courses/2013/programming-part-2/material.html" target="_blank">Object-Oriented Programming with Java</a> course. Practiced encapsulation, creating GUIs with Java, action event listeners.'},
 	{title: 'Markdown Previewer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917602/Ed_MarkdownPreviewer_ddlmxc.png', link: 'http://codepen.io/edcheung/pen/NxzxWQ', date: '1/29/16', tags: ['front']},
 	{title: 'Camper Leaderboard', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917939/Ed_CamperLeaderBoard_gssv7k.png', link: 'http://codepen.io/edcheung/pen/ZQjQyp', date: '2/3/16', tags: ['front']},
 	{title: 'TwitchTV App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457918127/Ed_Twitch_nqchyu.png', link: 'http://codepen.io/edcheung/pen/YyMQPz', date: '12/4/15', tags: ['front']},
