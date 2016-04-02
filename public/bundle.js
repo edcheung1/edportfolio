@@ -16275,11 +16275,10 @@ var Sticky = function (_React$Component) {
 
     _this.onScroll = function () {
       var pageY = window.pageYOffset;
-      var origin = _this.getOrigin(pageY);
       var isSticky = _this.isSticky(pageY, _this.state.origin);
       var hasChanged = _this.state.isSticky !== isSticky;
 
-      _this.setState({ isSticky: isSticky, origin: origin });
+      _this.setState({ isSticky: isSticky });
       _this.context.container.updateOffset(isSticky ? _this.state.height : 0);
 
       if (hasChanged) _this.props.onStickyStateChange(isSticky);
@@ -16287,7 +16286,7 @@ var Sticky = function (_React$Component) {
 
     _this.onResize = function () {
       var height = _reactDom2.default.findDOMNode(_this).getBoundingClientRect().height;
-      var origin = _this.getOrigin(window.pageYOffset);
+      var origin = _this.refs.placeholder.getBoundingClientRect().top + window.pageYOffset;
       _this.setState({ height: height, origin: origin });
     };
 
@@ -16316,16 +16315,11 @@ var Sticky = function (_React$Component) {
       this.off(['resize', 'pageshow', 'load'], this.onResize);
     }
   }, {
-    key: 'getOrigin',
-    value: function getOrigin(pageY) {
-      return this.refs.placeholder.getBoundingClientRect().top + pageY;
-    }
-  }, {
     key: 'update',
     value: function update() {
       var height = _reactDom2.default.findDOMNode(this).getBoundingClientRect().height;
       var pageY = window.pageYOffset;
-      var origin = this.getOrigin(pageY);
+      var origin = this.refs.placeholder.getBoundingClientRect().top + pageY;
       var isSticky = this.isSticky(pageY, origin);
       this.setState({ height: height, origin: origin, isSticky: isSticky });
     }
@@ -36295,14 +36289,14 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 	render: function() {
 		return(
 			React.createElement("div", {id: "intro-box"}, 				
-				React.createElement("div", {className: "navAnchor", id: "about"}), 
 				React.createElement("div", {className: "container"}, 
 					React.createElement("div", {className: "col-sm-6 text-left"}, 
+						React.createElement("div", {className: "navAnchor", id: "about"}), 
 						React.createElement("div", {className: "col-md-12", id: "hello-box"}, 
 							React.createElement("h2", null, "Hello!"), 
 							React.createElement("h3", null, "My name is Ed. I'm a self-taught full-stack developer and tech aficionado."), React.createElement("br", null), 
 							React.createElement("p", null, 
-							"I love innovation and being on the forefront of groundbreaking technology. I have an eye for spotting inefficient processes and revamping it into faster, more streamlined systems. Building and creating, virtually or physically, has always been my passion.", 
+							"I love innovation and being on the forefront of groundbreaking technology. Spotting inefficient processes and developing revamped, streamlined systems is my forté. Building and creating, virtually or physically, is my passion.", 
 							React.createElement("br", null), React.createElement("br", null), 
 							"I'm currently based in New Orleans, LA and planning to relocate to Seattle, WA."
 							)
@@ -36653,21 +36647,35 @@ module.exports=[
 		desc: 'Tic-tac-toe AI implemented using Minimax algorithm with internal scoring logged using bitwise manipulation. Graphics drawn using SVG methods.'},
 	{title: 'Matrix Structural Analysis Script', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1459027327/Ed_MatrixStructure_hhtt7v.png', date: '10/27/15', tags: ['fav', 'other'],
 		desc: 'Created to automate structural analyses for thousands of pipe supports with varying geometries. Implements the <a href="https://en.wikipedia.org/wiki/Direct_stiffness_method" target="_blank">Matrix Stiffness Method</a> as well as various matrix math functions using Excel VBA.'},
-	{title: 'Game of Life', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191410/Ed_GameOfLifeJava_lzwakq.png', date: '10/10/15', tags: ['other']},
+	{title: 'Game of Life', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191410/Ed_GameOfLifeJava_lzwakq.png', date: '10/10/15', tags: ['other'],
+		desc: 'Implementation of <a href="https://en.wikipedia.org/wiki/Game_of_Life" target="_blank">Conway\'s Game of Life</a> in Java. Starting board is randomly generated.'},
 	{title: 'Worm Game', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191409/Ed_JavaWorm_n1igtk.png', date: '10/27/15', tags: ['fav', 'other'],
 		desc: 'Created as final project of 12-week <a href="http://mooc.fi/courses/2013/programming-part-2/material.html" target="_blank">Object-Oriented Programming with Java</a> course. Practiced encapsulation, creating GUIs with Java, action event listeners.'},
-	{title: 'Markdown Previewer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917602/Ed_MarkdownPreviewer_ddlmxc.png', link: 'http://codepen.io/edcheung/pen/NxzxWQ', date: '1/29/16', tags: ['front']},
-	{title: 'Camper Leaderboard', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917939/Ed_CamperLeaderBoard_gssv7k.png', link: 'http://codepen.io/edcheung/pen/ZQjQyp', date: '2/3/16', tags: ['front']},
-	{title: 'TwitchTV App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457918127/Ed_Twitch_nqchyu.png', link: 'http://codepen.io/edcheung/pen/YyMQPz', date: '12/4/15', tags: ['front']},
-	{title: 'Wikipedia App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_scale,h_175,w_275/v1457918801/Ed_Wikipedia_cnrn9e.png', link: 'http://codepen.io/edcheung/pen/zrYmPg', date: '12/11/15', tags: ['front']},
-	{title: 'Camper News App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457918991/Ed_CamperNews_xjx17n.png', link: 'http://codepen.io/edcheung/pen/KVPoad', date: '12/2/15', tags: ['front']},
-	{title: 'Javascript Calculator', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919250/Ed_Calculator_uvaqtt.png', link: 'http://codepen.io/edcheung/pen/RWEeEK', date: '11/17/15', tags: ['front']},
-	{title: 'Local Weather App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919450/Ed_Weather_a6dqqp.png', link: 'http://codepen.io/edcheung/pen/qOvBNd', date: '11/18/15', tags: ['front']},
-	{title: 'Pomodoro Timer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920246/Ed_Timer_q0kjfl.png', link: 'http://codepen.io/edcheung/pen/VvEbjm', date: '11/13/15', tags: ['front']},
-	{title: 'Timestamp Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457921043/Ed_Timestamp_tmicee.png', link: 'https://edcheung-fcc-timestamp.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-timestamp', date: '1/15/16', tags: ['back']},
-	{title: 'Header Parser Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457921199/Ed_HeaderParser_ex6ffo.png', link: 'https://edcheung-fcc-headerparser.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-headerParser', date: '1/17/16', tags: ['back']},
-	{title: 'URL Shortener Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457998163/Ed_UrlShortener_mxhhzo.png', link: 'https://edcheung-fcc-urlshortener.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-urlshortener', date: '1/15/16', tags: ['back']},
-	{title: 'Image Search Abstraction Layer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458188556/Ed_ImageSearch_suve2e.png', link: 'https://edcheung-fcc-imgsearch.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-imagesearch', date: '1/25/16', tags: ['back']},
-	{title: 'File Metadata Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back']}
+	{title: 'Markdown Previewer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917602/Ed_MarkdownPreviewer_ddlmxc.png', link: 'http://codepen.io/edcheung/pen/NxzxWQ', date: '1/29/16', tags: ['front'],
+		desc: 'React.js app that instantly converts user input text to markdown text.'},
+	{title: 'Camper Leaderboard', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457917939/Ed_CamperLeaderBoard_gssv7k.png', link: 'http://codepen.io/edcheung/pen/ZQjQyp', date: '2/3/16', tags: ['front'],
+		desc: 'Displays camper statistics provided by FreeCodeCamp API. Rendered using React.js, campers can be sorted by score in ascending or descending order.'},
+	{title: 'TwitchTV App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457918127/Ed_Twitch_nqchyu.png', link: 'http://codepen.io/edcheung/pen/YyMQPz', date: '12/4/15', tags: ['front'],
+		desc: 'Utilizes Twitch.tv API to display live information of pre-defined list of streamers.'},
+	{title: 'Wikipedia App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_scale,h_175,w_275/v1457918801/Ed_Wikipedia_cnrn9e.png', link: 'http://codepen.io/edcheung/pen/zrYmPg', date: '12/11/15', tags: ['front'],
+		desc: 'Searches using Wikipedia API and displays top ten results each with thumbnail and brief article description.'},
+	{title: 'Camper News App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457918991/Ed_CamperNews_xjx17n.png', link: 'http://codepen.io/edcheung/pen/KVPoad', date: '12/2/15', tags: ['front'],
+		desc: 'Uses FreeCodeCamp API to display top news articles posted by campers.'},
+	{title: 'Javascript Calculator', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919250/Ed_Calculator_uvaqtt.png', link: 'http://codepen.io/edcheung/pen/RWEeEK', date: '11/17/15', tags: ['front'],
+		desc: 'Recreation of classic four-function calculator styled using CSS3 and Javascript.'},
+	{title: 'Local Weather App', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919450/Ed_Weather_a6dqqp.png', link: 'http://codepen.io/edcheung/pen/qOvBNd', date: '11/18/15', tags: ['front'],
+		desc: 'Using Openweather API, displays local weather information based on client location.'},
+	{title: 'Pomodoro Timer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920246/Ed_Timer_q0kjfl.png', link: 'http://codepen.io/edcheung/pen/VvEbjm', date: '11/13/15', tags: ['front'],
+		desc: 'Basic Pomodoro timer that can be paused, reset, and adjusted dynamically.'},
+	{title: 'Timestamp Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457921043/Ed_Timestamp_tmicee.png', link: 'https://edcheung-fcc-timestamp.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-timestamp', date: '1/15/16', tags: ['back'],
+		desc: 'API that converts string parameter into Unix time and natural language time.'},
+	{title: 'Header Parser Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457921199/Ed_HeaderParser_ex6ffo.png', link: 'https://edcheung-fcc-headerparser.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-headerParser', date: '1/17/16', tags: ['back'],
+		desc: 'API that displays various system information based on client\'s browser.'},
+	{title: 'URL Shortener Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1457998163/Ed_UrlShortener_mxhhzo.png', link: 'https://edcheung-fcc-urlshortener.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-urlshortener', date: '1/15/16', tags: ['back'],
+		desc: 'API allowing clients to post URLs and retrieve shortened URLs in JSON format. Database built with MongoDB and deployed on Heroku using Mongolab.'},
+	{title: 'Image Search Abstraction Layer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458188556/Ed_ImageSearch_suve2e.png', link: 'https://edcheung-fcc-imgsearch.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-imagesearch', date: '1/25/16', tags: ['back'],
+		desc: 'Image search application with queries using Bing API. Saves recent search history using MongoDB.'},
+	{title: 'File Metadata Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back'],
+		desc: 'Application allowing users to upload any file and receive file size in JSON format.'}
 ]
 },{}]},{},[414]);

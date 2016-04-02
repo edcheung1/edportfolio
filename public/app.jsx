@@ -87,14 +87,14 @@ var IntroBox = React.createClass({
 	render: function() {
 		return(
 			<div id="intro-box">				
-				<div className="navAnchor" id="about" />
 				<div className="container">
 					<div className="col-sm-6 text-left">
+						<div className="navAnchor" id="about" />
 						<div className="col-md-12" id="hello-box">
 							<h2>Hello!</h2>
 							<h3>My name is Ed. I'm a self-taught full-stack developer and tech aficionado.</h3><br/>
 							<p>
-							I love innovation and being on the forefront of groundbreaking technology. I have an eye for spotting inefficient processes and revamping it into faster, more streamlined systems. Building and creating, virtually or physically, has always been my passion.
+							I love innovation and being on the forefront of groundbreaking technology. Spotting inefficient processes and developing revamped, streamlined systems is my forté. Building and creating, virtually or physically, is my passion.
 							<br/><br/>
 							I'm currently based in New Orleans, LA and planning to relocate to Seattle, WA.
 							</p>
