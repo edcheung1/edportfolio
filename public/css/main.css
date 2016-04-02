@@ -265,6 +265,12 @@ h1 {
   border: 2px solid black;
 }
 
+#spacer-box {
+	display: block;
+	height: 20em;
+	width: 100%;
+}
+
 /* Styling for contact-box */
 
 #contact-box {

@@ -36298,7 +36298,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 							React.createElement("p", null, 
 							"I love innovation and being on the forefront of groundbreaking technology. Spotting inefficient processes and developing revamped, streamlined systems is my forté. Building and creating, virtually or physically, is my passion.", 
 							React.createElement("br", null), React.createElement("br", null), 
-							"I'm currently based in New Orleans, LA and planning to relocate to Seattle, WA."
+							"I'm currently based in New Orleans, LA and will be relocating to Seattle, WA."
 							)
 						)
 					), 
@@ -36608,6 +36608,7 @@ var Main = React.createClass({displayName: "Main",
         React.createElement(AboutBox, null), 
 				React.createElement(IntroBox, null), 
         React.createElement(PortfolioBox, null), 
+				React.createElement("div", {id: "spacer-box"}), 
         React.createElement(ContactBox, {id: "contactBox"})
       )
     );    

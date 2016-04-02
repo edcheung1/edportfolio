@@ -96,7 +96,7 @@ var IntroBox = React.createClass({
 							<p>
 							I love innovation and being on the forefront of groundbreaking technology. Spotting inefficient processes and developing revamped, streamlined systems is my forté. Building and creating, virtually or physically, is my passion.
 							<br/><br/>
-							I'm currently based in New Orleans, LA and planning to relocate to Seattle, WA.
+							I'm currently based in New Orleans, LA and will be relocating to Seattle, WA.
 							</p>
 						</div>
 					</div>
@@ -406,6 +406,7 @@ var Main = React.createClass({
         <AboutBox />
 				<IntroBox />
         <PortfolioBox />
+				<div id="spacer-box" />
         <ContactBox id="contactBox"/>
       </div>
     );    
