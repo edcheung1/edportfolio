@@ -11,7 +11,7 @@
 		desc: 'Pulls and displays US GDP from external JSON data. Visualization created using D3.js graphing functions.'},
 	{title: 'Tic-Tac-Toe', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_north,h_175,w_275/v1457898738/Ed_TicTacToe_mbchhm.png', link: 'http://codepen.io/edcheung/pen/PZNpbQ', date: '12/22/15', tags: ['fav', 'front'],
 		desc: 'Tic-tac-toe AI implemented using Minimax algorithm with internal scoring logged using bitwise manipulation. Graphics drawn using SVG methods.'},
-	{title: 'Matrix Structural Analysis Script', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1459027327/Ed_MatrixStructure_hhtt7v.png', date: '10/27/15', tags: ['fav', 'other'],
+	{title: 'Matrix Structural Analysis Script', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1459027327/Ed_MatrixStructure_hhtt7v.png', date: '10/27/15', tags: ['fav', 'other'],
 		desc: 'Created to automate structural analyses for thousands of pipe supports with varying geometries. Implements the <a href="https://en.wikipedia.org/wiki/Direct_stiffness_method" target="_blank">Matrix Stiffness Method</a> as well as various matrix math functions using Excel VBA.'},
 	{title: 'Game of Life', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458191410/Ed_GameOfLifeJava_lzwakq.png', date: '10/10/15', tags: ['other'],
 		desc: 'Implementation of <a href="https://en.wikipedia.org/wiki/Game_of_Life" target="_blank">Conway\'s Game of Life</a> in Java. Starting board is randomly generated.'},

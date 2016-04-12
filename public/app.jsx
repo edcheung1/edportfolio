@@ -300,10 +300,11 @@ var ProjectRow = React.createClass({
 
   render: function() {
     var projectList = this.props.projects.map(function(project, i) {
+    	var isFav = project.tags.indexOf('fav') > -1 ? 'project-thumb-fav' : '';
       return(
         <div className="col-md-4 col-sm-6 col-xs-12 project-col project-slideup" key={i+1}>
 					<div className="project-box">						
-						<img src={project.thumb} className="project-thumb" onClick={this.openModal.bind(null, project)}/>
+						<img src={project.thumb} className={"project-thumb " + isFav} onClick={this.openModal.bind(null, project)}/>
 						<span>{project.title}</span> 
 					</div>
         </div>

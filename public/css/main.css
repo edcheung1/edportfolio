@@ -217,6 +217,10 @@ h1 {
   cursor: pointer;
 }
 
+.project-thumb-fav {
+  border-color: orange !important;
+}
+
 .project-enter {
   opacity: 0.01;
 	transform: translate(0, 50px);
