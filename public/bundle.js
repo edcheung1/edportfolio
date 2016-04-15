@@ -37377,6 +37377,8 @@ module.exports=[
 	{title: 'Image Search Abstraction Layer', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458188556/Ed_ImageSearch_suve2e.png', link: 'https://edcheung-fcc-imgsearch.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-imagesearch', date: '1/25/16', tags: ['back'],
 		desc: 'Image search application with queries using Bing API. Saves recent search history using MongoDB.'},
 	{title: 'File Metadata Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back'],
-		desc: 'Application allowing users to upload any file and receive file size in JSON format.'}
+		desc: 'Application allowing users to upload any file and receive file size in JSON format.'},
+	{title: 'Doping in Cycling Scatterplot Visualization', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1460750382/Ed_Scatterplot_nc3aix.png', link: 'http://codepen.io/edcheung/full/pypqQJ/', date: '4/15/16', tags: ['data', 'fav'],
+		desc: 'Scatterplot comparing cyclist finish times with doping allegations. Utilizes D3.js and SVG to generate graph.'}
 ]
 },{}]},{},[423]);
