@@ -37251,7 +37251,8 @@ var ContactBox = React.createClass({displayName: "ContactBox",
   render: function() {
     return(
       React.createElement("div", {id: "contact-box"}, 
-				React.createElement("h2", null, "Contact"), React.createElement("br", null), 
+				React.createElement("h2", null, "Contact"), 
+				React.createElement("span", null, "Feel free to send me a message!", React.createElement("br", null), "I will respond as quickly as I can.", React.createElement("br", null), React.createElement("br", null)), 
 				React.createElement("div", {className: "navAnchor", id: "contact"}), 
         React.createElement("a", {href: "https://github.com/edcheung1", target: "_blank"}, 
           React.createElement("i", {className: "fa fa-github fa-2x fa-fw"})), 
@@ -37260,7 +37261,8 @@ var ContactBox = React.createClass({displayName: "ContactBox",
         React.createElement("a", {href: "https://www.freecodecamp.com/edcheung1", target: "_blank"}, 
           React.createElement("i", {className: "fa fa-fire fa-2x fa-fw"})), 
         React.createElement("a", {href: "mailto:echeung1991@gmail.com"}, 
-          React.createElement("i", {className: "fa fa-envelope fa-2x fa-fw"}))
+          React.createElement("i", {className: "fa fa-envelope fa-2x fa-fw"})), 
+        React.createElement("span", {style: {fontSize: '.75em'}}, React.createElement("br", null), React.createElement("br", null), "© Edward Cheung 2016")
       )
     );    
   }  
@@ -37378,7 +37380,7 @@ module.exports=[
 		desc: 'Image search application with queries using Bing API. Saves recent search history using MongoDB.'},
 	{title: 'File Metadata Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back'],
 		desc: 'Application allowing users to upload any file and receive file size in JSON format.'},
-	{title: 'Doping in Cycling Scatterplot Visualization', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1460750382/Ed_Scatterplot_nc3aix.png', link: 'http://codepen.io/edcheung/full/pypqQJ/', date: '4/15/16', tags: ['data', 'fav'],
+	{title: 'Doping in Cycling Scatterplot Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1460750382/Ed_Scatterplot_nc3aix.png', link: 'http://codepen.io/edcheung/full/pypqQJ/', date: '4/15/16', tags: ['data', 'fav'],
 		desc: 'Scatterplot comparing cyclist finish times with doping allegations. Utilizes D3.js and SVG to generate graph.'}
 ]
 },{}]},{},[423]);

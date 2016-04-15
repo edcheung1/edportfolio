@@ -350,7 +350,8 @@ var ContactBox = React.createClass({
   render: function() {
     return(
       <div id="contact-box">
-				<h2>Contact</h2><br/>
+				<h2>Contact</h2>
+				<span>Feel free to send me a message!<br/>I will respond as quickly as I can.<br/><br/></span>
 				<div className="navAnchor" id="contact" />
         <a href='https://github.com/edcheung1' target='_blank'>
           <i className="fa fa-github fa-2x fa-fw" /></a>
@@ -360,6 +361,7 @@ var ContactBox = React.createClass({
           <i className="fa fa-fire fa-2x fa-fw" /></a>
         <a href='mailto:echeung1991@gmail.com'>
           <i className="fa fa-envelope fa-2x fa-fw" /></a>
+        <span style={{fontSize: '.75em'}}><br/><br/>© Edward Cheung 2016</span>
       </div>
     );    
   }  
