@@ -37344,7 +37344,7 @@ module.exports=[
 		desc: 'Pure React.js web application, allows the user to add, edit, or delete recipes and associated ingredients. Saves data to client-side local storage.'},
 	{title: 'MongoMart', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457911220/Ed_MongoMart_gd0tna.png', link: 'http://edcheung-mongomart.herokuapp.com/', git: 'https://github.com/edcheung1/mongomart', date: '3/1/16', tags: ['fav', 'full'],
 		desc: 'Created as the final project of <a href="https://university.mongodb.com/courses/M101JS/about" target="_blank">M101JS: MongoDB for Node.js Developers</a>. The front-end was provided while I completed the MongoDB back-end to create a functional query, cart, and review system. Try adding your own review!'},
-	{title: 'GDP Data Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['fav', 'data'],
+	{title: 'GDP Data Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['data'],
 		desc: 'Pulls and displays US GDP from external JSON data. Visualization created using D3.js graphing functions.'},
 	{title: 'Tic-Tac-Toe', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_north,h_175,w_275/v1457898738/Ed_TicTacToe_mbchhm.png', link: 'http://codepen.io/edcheung/pen/PZNpbQ', date: '12/22/15', tags: ['fav', 'front'],
 		desc: 'Tic-tac-toe AI implemented using Minimax algorithm with internal scoring logged using bitwise manipulation. Graphics drawn using SVG methods.'},
@@ -37380,7 +37380,9 @@ module.exports=[
 		desc: 'Image search application with queries using Bing API. Saves recent search history using MongoDB.'},
 	{title: 'File Metadata Microservice', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,g_west,h_175,w_275/v1458189393/Ed_FileMetadata_wwxtkh.png', link: 'http://edcheung-fcc-filedata.herokuapp.com/', git: 'https://github.com/edcheung1/fcc-basejump-filedata', date: '1/28/16', tags: ['back'],
 		desc: 'Application allowing users to upload any file and receive file size in JSON format.'},
-	{title: 'Doping in Cycling Scatterplot Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1460750382/Ed_Scatterplot_nc3aix.png', link: 'http://codepen.io/edcheung/full/pypqQJ/', date: '4/15/16', tags: ['data', 'fav'],
-		desc: 'Scatterplot comparing cyclist finish times with doping allegations. Utilizes D3.js and SVG to generate graph.'}
+	{title: 'Doping in Cycling Scatterplot', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1460750382/Ed_Scatterplot_nc3aix.png', link: 'http://codepen.io/edcheung/full/pypqQJ/', date: '4/15/16', tags: ['data', 'fav'],
+		desc: 'Scatterplot comparing cyclist finish times with doping allegations. Utilizes D3.js and SVG to generate graph.'},
+	{title: 'Global Temperature Heat Map', thumb: 'http://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1461185007/Ed_HeatMap_dlpsjq.png', link: 'https://codepen.io/edcheung/full/zqaoQZ/', date: '4/20/16', tags: ['data', 'fav'],
+		desc: 'Heat map showing deviations in average global temperature from 1753 to 2015. Utilizes D3.js and SVG to generate graph.'}
 ]
 },{}]},{},[423]);
