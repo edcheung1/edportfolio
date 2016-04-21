@@ -185,9 +185,9 @@ h1 {
 	opacity: .8;	
 }
 
-.project-box:hover > img {
-	opacity: .25;	
-}
+/*.project-box:hover > img {*/
+/*	opacity: .25;	*/
+/*}*/
 
 .project-box > span {
 	position: absolute;
@@ -204,8 +204,14 @@ h1 {
 
 .project-box > img {
   display: relative;
-	opacity: 1;
-	transition: opacity .5s;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.12), 0 3px 4px rgba(0,0,0,0.24);
+  transition: all 0.2s ease-in-out;
+	/*opacity: 1;*/
+	/*transition: opacity .5s;*/
+}
+
+.project-box:hover > img {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .project-thumb {
