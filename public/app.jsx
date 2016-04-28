@@ -8,8 +8,19 @@ var ReactSticky = require('react-sticky');
 var allProjects = require('./data/projects.json');
 var ascending = true;
 
-const {Modal, ButtonToolbar, Button, Navbar, Nav, NavItem, NavDropdown, MenuItem} = ReactBootstrap;
-const {StickyContainer, Sticky} = ReactSticky;
+const Modal = ReactBootstrap.Modal;
+const ButtonToolbar = ReactBootstrap.ButtonToolbar;
+const Button = ReactBootstrap.Button;
+const Nav = ReactBootstrap.Nav;
+const Navbar = ReactBootstrap.Navbar;
+const NavItem = ReactBootstrap.NavItem;
+const NavDropdown = ReactBootstrap.NavDropdown;
+const MenuItem = ReactBootstrap.MenuItem;
+const Sticky = ReactSticky.Sticky;
+const StickyContainer = ReactSticky.StickyContainer
+
+// const {Modal, ButtonToolbar, Button, Navbar, Nav, NavItem, NavDropdown, MenuItem} = ReactBootstrap;
+// const {StickyContainer, Sticky} = ReactSticky;
 
 /*
 	React class for about container
