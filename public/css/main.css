@@ -40,6 +40,15 @@ h1 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 500px) {
+  #about-box h1 {
+    font-size: 3em;
+  }
+  #about-box h3 {
+    font-size: 2em;
+  }
+}
+
 .style-bg {
   position: fixed;
   top: 0;
@@ -162,6 +171,16 @@ h1 {
 
 .portfolio-menu-select > div > span {
 	display: inline-block !important;
+}
+
+@media (max-width: 500px) {
+  .portfolio-menu-select > div > span {
+    display: none !important;
+  }
+  #portfolio-menu {
+    min-width: 3em;
+  }
+  
 }
 
 .project-list-container {
