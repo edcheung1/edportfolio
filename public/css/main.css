@@ -181,6 +181,11 @@ h1 {
     min-width: 3em;
   }
   
+  #portfolio-menu > div:hover > div > span {
+    display: none;
+  }
+  
+  
 }
 
 .project-list-container {
