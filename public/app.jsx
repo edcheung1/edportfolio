@@ -334,12 +334,14 @@ var ProjectRow = React.createClass({
             {this.state.projectTitle}
           </Modal.Header>
           <Modal.Body>
-						<div className="col-sm-6">
-							<img src={this.state.projectImg} className='modal-img pull-left'/>
+						<div className="col-sm-6 col-xs-12">
+							<img src={this.state.projectImg} className='modal-img'/>
 						</div>
-						<div className="col-sm-6">
-							<strong>Description: </strong><div dangerouslySetInnerHTML={{__html: this.state.projectDesc}} /><br />
-							<strong>Completed: </strong>{this.state.projectDate}
+						<div className="col-sm-6 col-xs-12">
+							<div className='modal-desc'>
+								<strong>Description: </strong><div dangerouslySetInnerHTML={{__html: this.state.projectDesc}} /><br />
+								<strong>Completed: </strong>{this.state.projectDate}
+							</div>
 						</div>
           </Modal.Body>
           <Modal.Footer>

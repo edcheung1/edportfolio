@@ -37235,12 +37235,14 @@ var ProjectRow = React.createClass({displayName: "ProjectRow",
             this.state.projectTitle
           ), 
           React.createElement(Modal.Body, null, 
-						React.createElement("div", {className: "col-sm-6"}, 
-							React.createElement("img", {src: this.state.projectImg, className: "modal-img pull-left"})
+						React.createElement("div", {className: "col-sm-6 col-xs-12"}, 
+							React.createElement("img", {src: this.state.projectImg, className: "modal-img"})
 						), 
-						React.createElement("div", {className: "col-sm-6"}, 
-							React.createElement("strong", null, "Description: "), React.createElement("div", {dangerouslySetInnerHTML: {__html: this.state.projectDesc}}), React.createElement("br", null), 
-							React.createElement("strong", null, "Completed: "), this.state.projectDate
+						React.createElement("div", {className: "col-sm-6 col-xs-12"}, 
+							React.createElement("div", {className: "modal-desc"}, 
+								React.createElement("strong", null, "Description: "), React.createElement("div", {dangerouslySetInnerHTML: {__html: this.state.projectDesc}}), React.createElement("br", null), 
+								React.createElement("strong", null, "Completed: "), this.state.projectDate
+							)
 						)
           ), 
           React.createElement(Modal.Footer, null, 
@@ -37348,7 +37350,7 @@ function compareDate(a,b) {
 },{"./data/projects.json":424,"react":422,"react-addons-css-transition-group":2,"react-bootstrap":83,"react-dom":256,"react-sticky":258,"react-timer-mixin":260}],424:[function(require,module,exports){
 module.exports=[
 	{title: 'Roguelike Dungeon Crawler', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1463587091/Ed_DungeonCrawler_vo0ppa.png', link: 'http://codepen.io/edcheung/full/jqdYgO/', date: '5/18/16', tags: ['fav', 'front'],
-		desc: 'Play in a procedurally-generated dungeon crawler that gets more cramped as you progress. Get stronger by slaying enemies and collecting weapons. Make sure you\'re poweful enough before you attempt to defeat the boss at the end!'},
+		desc: 'Play in a procedurally-generated dungeon crawler that gets more cramped as you progress. Get stronger by slaying enemies and collecting weapons. Make sure you\'re poweful enough before you attempt to defeat the boss at the end! Built with React.js and SASS'},
 	{title: 'Game of Life (React)', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1461864529/Ed_GameOfLife_a8l2re.png', link: 'http://codepen.io/edcheung/full/MyBPgq/', date: '4/27/16', tags: ['fav', 'front'],
 		desc: 'A React.js implementation of John Conway\'s <a href="https://en.wikipedia.org/wiki/Game_of_Life" target="_blank">Game of Life</a>. Includes ability to change game speed and board size. Try pasting a preset pattern on the fly!'},
 	{title: 'Simon', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', date: '1/5/16', tags: ['fav', 'front'],

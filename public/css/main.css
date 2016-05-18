@@ -287,10 +287,14 @@ h1 {
 	width: 100%;
 }
 
-.modal-body  img {
-	position: absolute;
-	left: 0;
+.modal-body .modal-img {
+  display: block;
+	margin: 0 auto;
   border: 2px solid black;
+}
+
+.modal-body .modal-desc {
+  display: inline-block;
 }
 
 #spacer-box {
