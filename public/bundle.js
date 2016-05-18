@@ -37347,6 +37347,8 @@ function compareDate(a,b) {
 
 },{"./data/projects.json":424,"react":422,"react-addons-css-transition-group":2,"react-bootstrap":83,"react-dom":256,"react-sticky":258,"react-timer-mixin":260}],424:[function(require,module,exports){
 module.exports=[
+	{title: 'Roguelike Dungeon Crawler', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1463587091/Ed_DungeonCrawler_vo0ppa.png', link: 'http://codepen.io/edcheung/full/jqdYgO/', date: '5/18/16', tags: ['fav', 'front'],
+		desc: 'Play in a procedurally-generated dungeon crawler that gets more cramped as you progress. Get stronger by slaying enemies and collecting weapons. Make sure you\'re poweful enough before you attempt to defeat the boss at the end!'},
 	{title: 'Game of Life (React)', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1461864529/Ed_GameOfLife_a8l2re.png', link: 'http://codepen.io/edcheung/full/MyBPgq/', date: '4/27/16', tags: ['fav', 'front'],
 		desc: 'A React.js implementation of John Conway\'s <a href="https://en.wikipedia.org/wiki/Game_of_Life" target="_blank">Game of Life</a>. Includes ability to change game speed and board size. Try pasting a preset pattern on the fly!'},
 	{title: 'Simon', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457920043/Ed_Simon_shf5vc.png', link: 'http://codepen.io/edcheung/pen/XXpqKZ', date: '1/5/16', tags: ['fav', 'front'],
@@ -37355,7 +37357,7 @@ module.exports=[
 		desc: 'Created as the final project of <a href="https://university.mongodb.com/courses/M101JS/about" target="_blank">M101JS: MongoDB for Node.js Developers</a>. The front-end was provided while I completed the MongoDB back-end to create a functional query, cart, and review system. Try adding your own review!'},
 	{title: 'My Portfolio', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1458516387/Ed_Portfolio_hd1rck.png', link: 'http://edcheung-portfolio.herokuapp.com/', git: 'https://github.com/edcheung1/edportfolio', date:'3/27/16', tags: ['fav', 'full'],
 		desc: 'Welcome to my portfolio! Made with React.js, this site follows the latest responsive web design principles and has been refactored to maximize code readability and maintainability (see GitHub source). This portfolio is deployed on the Heroku Node.js driver and hosted on Google Domains'},
-	{title: 'Recipe Box', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link: 'http://codepen.io/edcheung/pen/bExZzv', date: '2/17/16', tags: ['fav', 'front'],
+	{title: 'Recipe Box', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457919611/Ed_RecipeBox_nzdqpo.png', link: 'http://codepen.io/edcheung/pen/bExZzv', date: '2/17/16', tags: ['front'],
 		desc: 'Pure React.js web application, allows the user to add, edit, or delete recipes and associated ingredients. Saves data to client-side local storage.'},
 	{title: 'GDP Data Visualization', thumb: 'https://res.cloudinary.com/edcheung/image/upload/c_thumb,h_175,w_275/v1457894017/Ed_GDP_zygcqu.png', link: 'http://codepen.io/edcheung/pen/adxRMz', date: '2/29/16', tags: ['data'],
 		desc: 'Pulls and displays US GDP from external JSON data. Visualization created using D3.js graphing functions.'},
