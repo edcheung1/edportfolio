@@ -37015,7 +37015,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 	},
 	
 	fillProgressBar: function(name, value) {
-		var waitProgress = 250;
+		var waitProgress = 500;
 		var newProgressValues = this.state.progressValues;
 		
 		switch(name) {
@@ -37144,7 +37144,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 							"React.js", React.createElement("br", null), 
 								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'react', 85), bsStyle: "success", now: this.state.progressValues.react, label: `${this.state.progressValues.react}%`}), React.createElement("br", null), 
 							"D3.js", React.createElement("br", null), 
-								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'d3', 60), bsStyle: "info", now: this.state.progressValues.d3, label: `${this.state.progressValues.d3}%`}), React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'d3', 70), bsStyle: "info", now: this.state.progressValues.d3, label: `${this.state.progressValues.d3}%`}), React.createElement("br", null), 
 							"MongoDB", React.createElement("br", null), 
 								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'mongo', 80), bsStyle: "info", now: this.state.progressValues.mongo, label: `${this.state.progressValues.mongo}%`}), 
 								React.createElement("div", {className: "progress-icon"}, 
@@ -37155,7 +37155,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 							"Node.js", React.createElement("br", null), 
 								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'node', 50), bsStyle: "warning", now: this.state.progressValues.node, label: `${this.state.progressValues.node}%`}), React.createElement("br", null), 
 							"Java", React.createElement("br", null), 
-								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'java', 50), bsStyle: "warning", now: this.state.progressValues.java, label: `${this.state.progressValues.java}%`}), React.createElement("br", null)
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'java', 60), bsStyle: "warning", now: this.state.progressValues.java, label: `${this.state.progressValues.java}%`}), React.createElement("br", null)
 						)
 						
 					), 
