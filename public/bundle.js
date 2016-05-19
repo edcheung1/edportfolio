@@ -37128,13 +37128,29 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 						React.createElement("div", {id: "hello-box"}, 
 							React.createElement("h2", null, "Hello!"), 
 							React.createElement("h3", null, "My name is Ed. I'm a self-taught full-stack developer and tech aficionado."), React.createElement("br", null), 
-							React.createElement("p", null, 
-							"I love innovation and being on the forefront of groundbreaking technology. Spotting inefficient processes and developing revamped, streamlined systems is my forté. Building and creating, virtually or physically, is my passion.", 
+							React.createElement("p", null, React.createElement("i", null, 
+							"I love innovation and being on the forefront of groundbreaking technology." + ' ' + 
+							"Spotting inefficient processes and developing revamped, streamlined systems is my forté." + ' ' +
+							"Building and creating, virtually or physically, is my passion."), 
 							React.createElement("br", null), React.createElement("br", null), 
-							"I'm currently based in New Orleans, LA and will be relocating to Seattle, WA."
+							"While working as a structural engineer, I was tasked to perform repeated structural analyses with slight parameter changes between each one." + ' ' + 
+							"Not wanting to perform monotonous work, I began tinkering with ways to automate the process with the tool available to me at the time: Excel VBA." + ' ' + 
+							"I taught myself the ins and outs of the language and I was able to script many of the tedious and non-value-adding portions of my work." + ' ' + 
+							"Along the way, I discovered my passion for coding.", 
+							React.createElement("br", null), React.createElement("br", null), 
+							"I began my programming journey by working through courses offered on Codecademy, but quickly exhausted the introductory material." + ' ' + 
+							"With the goal of further developing my programming fundamentals, I enrolled and completed a 12-week Java course in ", React.createElement("b", null, "Object-Oriented Programming"), ", learning concepts that are applicable for any languages." + ' ' + 
+							"Currently, I am working through the ", React.createElement("b", null, "Full-Stack Developer"), " curriculum offered through FreeCodeCamp, having completed the ", React.createElement("b", null, "Front-End Developer"), " certification and portions of the ", React.createElement("b", null, "Back-End Developer"), " and ", React.createElement("b", null, "Data Visualization"), " certifications." + ' ' + 
+							"Many of the projects I've completed for these courses can be found in my portfolio below.", 
+							React.createElement("br", null), React.createElement("br", null), 
+							"By combining my engineering background and industry work experience, I can bring a unique and powerful perspective to a software firm looking for a self-motivated and forward-thinking developer." + ' ' +
+							"I will be relocating to Seattle, WA and am open to any developer opportunities in the area or remotely."
 							)
-						), 
+						)
 						
+					), 
+					React.createElement("div", {className: "col-sm-6 text-left"}, 
+					
 						React.createElement("div", {id: "skills-box"}, 
 							React.createElement("h2", null, "Skills"), 
 							"HTML/CSS/Bootstrap", React.createElement("br", null), 
@@ -37156,10 +37172,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'node', 50), bsStyle: "warning", now: this.state.progressValues.node, label: `${this.state.progressValues.node}%`}), React.createElement("br", null), 
 							"Java", React.createElement("br", null), 
 								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'java', 60), bsStyle: "warning", now: this.state.progressValues.java, label: `${this.state.progressValues.java}%`}), React.createElement("br", null)
-						)
-						
-					), 
-					React.createElement("div", {className: "col-sm-6 text-left"}, 
+						), 
 					
 						React.createElement("div", {id: "cert-box"}, 
 							React.createElement("h2", null, "Certificates"), 

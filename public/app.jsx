@@ -227,13 +227,29 @@ var IntroBox = React.createClass({
 						<div id="hello-box">
 							<h2>Hello!</h2>
 							<h3>My name is Ed. I'm a self-taught full-stack developer and tech aficionado.</h3><br/>
-							<p>
-							I love innovation and being on the forefront of groundbreaking technology. Spotting inefficient processes and developing revamped, streamlined systems is my forté. Building and creating, virtually or physically, is my passion.
+							<p><i>
+							I love innovation and being on the forefront of groundbreaking technology. 
+							Spotting inefficient processes and developing revamped, streamlined systems is my forté.
+							Building and creating, virtually or physically, is my passion.</i>
 							<br/><br/>
-							I'm currently based in New Orleans, LA and will be relocating to Seattle, WA.
+							While working as a structural engineer, I was tasked to perform repeated structural analyses with slight parameter changes between each one. 
+							Not wanting to perform monotonous work, I began tinkering with ways to automate the process with the tool available to me at the time: Excel VBA. 
+							I taught myself the ins and outs of the language and I was able to script many of the tedious and non-value-adding portions of my work. 
+							Along the way, I discovered my passion for coding.
+							<br/><br/>
+							I began my programming journey by working through courses offered on Codecademy, but quickly exhausted the introductory material. 
+							With the goal of further developing my programming fundamentals, I enrolled and completed a 12-week Java course in <b>Object-Oriented Programming</b>, learning concepts that are applicable for any languages. 
+							Currently, I am working through the <b>Full-Stack Developer</b> curriculum offered through FreeCodeCamp, having completed the <b>Front-End Developer</b> certification and portions of the <b>Back-End Developer</b> and <b>Data Visualization</b> certifications. 
+							Many of the projects I've completed for these courses can be found in my portfolio below.
+							<br/><br/> 
+							By combining my engineering background and industry work experience, I can bring a unique and powerful perspective to a software firm looking for a self-motivated and forward-thinking developer.
+							I will be relocating to Seattle, WA and am open to any developer opportunities in the area or remotely.
 							</p>
 						</div>
 						
+					</div>
+					<div className="col-sm-6 text-left">
+					
 						<div id="skills-box">
 							<h2>Skills</h2>
 							HTML/CSS/Bootstrap<br/>
@@ -256,9 +272,6 @@ var IntroBox = React.createClass({
 							Java<br/>
 								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'java', 60)} bsStyle="warning" now={this.state.progressValues.java} label={`${this.state.progressValues.java}%`}/><br/>
 						</div>
-						
-					</div>
-					<div className="col-sm-6 text-left">
 					
 						<div id="cert-box">
 							<h2>Certificates</h2>
