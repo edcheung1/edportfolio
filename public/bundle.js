@@ -37015,7 +37015,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 	},
 	
 	fillProgressBar: function(name, value) {
-		var waitProgress = 500;
+		var waitProgress = 250;
 		var newProgressValues = this.state.progressValues;
 		
 		switch(name) {

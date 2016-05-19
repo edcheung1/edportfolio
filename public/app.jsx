@@ -243,7 +243,7 @@ var IntroBox = React.createClass({
 							React.js<br/>
 								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'react', 85)} bsStyle="success" now={this.state.progressValues.react} label={`${this.state.progressValues.react}%`}/><br/>
 							D3.js<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'d3', 60)} bsStyle="info" now={this.state.progressValues.d3} label={`${this.state.progressValues.d3}%`}/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'d3', 70)} bsStyle="info" now={this.state.progressValues.d3} label={`${this.state.progressValues.d3}%`}/><br/>
 							MongoDB<br/>
 								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'mongo', 80)} bsStyle="info" now={this.state.progressValues.mongo} label={`${this.state.progressValues.mongo}%`}/>
 								<div className="progress-icon">
@@ -254,7 +254,7 @@ var IntroBox = React.createClass({
 							Node.js<br/>
 								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'node', 50)} bsStyle="warning" now={this.state.progressValues.node} label={`${this.state.progressValues.node}%`}/><br/>
 							Java<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'java', 50)} bsStyle="warning" now={this.state.progressValues.java} label={`${this.state.progressValues.java}%`}/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'java', 60)} bsStyle="warning" now={this.state.progressValues.java} label={`${this.state.progressValues.java}%`}/><br/>
 						</div>
 						
 					</div>
