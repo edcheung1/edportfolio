@@ -113,14 +113,43 @@ h1 {
 
 #hello-box {
 	background-color: #444;
-	top: 2em;
+	top: 1.5em;
 	padding: 2em;
 }
 
 #cert-box {
 	background-color: #555;
-	top: 2em;
+	top: 1.5em;
 	padding: 2em;
+}
+
+#skills-box {
+  background-color: #555;
+  top: 1.5em;
+  padding: 2em;
+}
+
+.progress {
+  display: inline-block;
+  width: 90%;
+  margin-bottom: .8em;
+}
+
+.progress-icon {
+  position: relative;
+  display: inline-block;
+  margin-left: 1em;
+  height: 22px;
+  line-height: 22px;
+}
+
+.progress-icon i {
+  position: absolute;
+  top: 0;
+}
+
+.progress-icon .gold {
+  color: #FFD700;
 }
 
 /* Styling for portfolio-box */

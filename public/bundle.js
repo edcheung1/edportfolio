@@ -36917,8 +36917,12 @@ const Navbar = ReactBootstrap.Navbar;
 const NavItem = ReactBootstrap.NavItem;
 const NavDropdown = ReactBootstrap.NavDropdown;
 const MenuItem = ReactBootstrap.MenuItem;
+const ProgressBar = ReactBootstrap.ProgressBar;
+const Tooltip = ReactBootstrap.Tooltip;
+const OverlayTrigger = ReactBootstrap.OverlayTrigger;
+
 const Sticky = ReactSticky.Sticky;
-const StickyContainer = ReactSticky.StickyContainer
+const StickyContainer = ReactSticky.StickyContainer;
 
 // const {Modal, ButtonToolbar, Button, Navbar, Nav, NavItem, NavDropdown, MenuItem} = ReactBootstrap;
 // const {StickyContainer, Sticky} = ReactSticky;
@@ -36996,13 +37000,132 @@ var AboutBox = React.createClass({displayName: "AboutBox",
 */
 
 var IntroBox = React.createClass({displayName: "IntroBox",
+	getInitialState: function() {
+		return {
+			progressValues: {
+				html: 0,
+				javascript: 0,
+				react: 0,
+				d3: 0,
+				mongo: 0,
+				node: 0,
+				java: 0
+			}
+		}
+	},
+	
+	fillProgressBar: function(name, value) {
+		var waitProgress = 500;
+		var newProgressValues = this.state.progressValues;
+		
+		switch(name) {
+			case 'html':
+				if(this.state.progressValues.html == 0) waitProgress = 0;
+				newProgressValues.html = 0;
+				this.setState({
+					progressValues: newProgressValues
+				});
+				setTimeout(function() {
+					newProgressValues.html = value;
+					this.setState({
+						progressValues: newProgressValues
+					});
+				}.bind(this), waitProgress);
+				break;
+			case 'javascript':
+				if(this.state.progressValues.javascript == 0) waitProgress = 0;
+				newProgressValues.javascript = 0;
+				this.setState({
+					progressValues: newProgressValues
+				});
+				setTimeout(function() {
+					newProgressValues.javascript = value;
+					this.setState({
+						progressValues: newProgressValues
+					});
+				}.bind(this), waitProgress);
+				break;
+			case 'react':
+				if(this.state.progressValues.react == 0) waitProgress = 0;
+				newProgressValues.react = 0;
+				this.setState({
+					progressValues: newProgressValues
+				});
+				setTimeout(function() {
+					newProgressValues.react = value;
+					this.setState({
+						progressValues: newProgressValues
+					});
+				}.bind(this), waitProgress);
+				break;
+			case 'd3':
+				if(this.state.progressValues.d3 == 0) waitProgress = 0;
+				newProgressValues.d3 = 0;
+				this.setState({
+					progressValues: newProgressValues
+				});
+				setTimeout(function() {
+					newProgressValues.d3 = value;
+					this.setState({
+						progressValues: newProgressValues
+					});
+				}.bind(this), waitProgress);
+				break;
+			case 'mongo':
+				if(this.state.progressValues.mongo == 0) waitProgress = 0;
+				newProgressValues.mongo = 0;
+				$('#mongo-star').removeClass('fa-star-o gold')
+				this.setState({
+					progressValues: newProgressValues
+				});
+				setTimeout(function() {
+					newProgressValues.mongo = value;
+					this.setState({
+						progressValues: newProgressValues
+					});
+					$('#mongo-star').removeClass('fa-star-o').addClass('fa-star gold');
+				}.bind(this), waitProgress);
+				break;
+			case 'node':
+				if(this.state.progressValues.node == 0) waitProgress = 0;
+				newProgressValues.node = 0;
+				this.setState({
+					progressValues: newProgressValues
+				});
+				setTimeout(function() {
+					newProgressValues.node = value;
+					this.setState({
+						progressValues: newProgressValues
+					});
+				}.bind(this), waitProgress);
+				break;
+			case 'java':
+				if(this.state.progressValues.java == 0) waitProgress = 0;
+				newProgressValues.java = 0;
+				this.setState({
+					progressValues: newProgressValues
+				});
+				setTimeout(function() {
+					newProgressValues.java = value;
+					this.setState({
+						progressValues: newProgressValues
+					});
+				}.bind(this), waitProgress);
+				break;
+		}
+		
+	},
+	
 	render: function() {
+		var certTooltip = React.createElement(Tooltip, {id: "cert-tooltip"}, "Certified!");
+		
 		return(
 			React.createElement("div", {id: "intro-box"}, 				
 				React.createElement("div", {className: "container"}, 
 					React.createElement("div", {className: "col-sm-6 text-left"}, 
 						React.createElement("div", {className: "navAnchor", id: "about"}), 
-						React.createElement("div", {className: "col-md-12", id: "hello-box"}, 
+						
+						React.createElement("div", {id: "hello-box"}, 
 							React.createElement("h2", null, "Hello!"), 
 							React.createElement("h3", null, "My name is Ed. I'm a self-taught full-stack developer and tech aficionado."), React.createElement("br", null), 
 							React.createElement("p", null, 
@@ -37010,10 +37133,35 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 							React.createElement("br", null), React.createElement("br", null), 
 							"I'm currently based in New Orleans, LA and will be relocating to Seattle, WA."
 							)
+						), 
+						
+						React.createElement("div", {id: "skills-box"}, 
+							React.createElement("h2", null, "Skills"), 
+							"HTML/CSS/Bootstrap", React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'html', 90), bsStyle: "success", now: this.state.progressValues.html, label: `${this.state.progressValues.html}%`}), React.createElement("br", null), 
+							"Javascript", React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'javascript', 85), bsStyle: "success", now: this.state.progressValues.javascript, label: `${this.state.progressValues.javascript}%`}), React.createElement("br", null), 
+							"React.js", React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'react', 85), bsStyle: "success", now: this.state.progressValues.react, label: `${this.state.progressValues.react}%`}), React.createElement("br", null), 
+							"D3.js", React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'d3', 60), bsStyle: "info", now: this.state.progressValues.d3, label: `${this.state.progressValues.d3}%`}), React.createElement("br", null), 
+							"MongoDB", React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'mongo', 80), bsStyle: "info", now: this.state.progressValues.mongo, label: `${this.state.progressValues.mongo}%`}), 
+								React.createElement("div", {className: "progress-icon"}, 
+									React.createElement(OverlayTrigger, {placement: "top", overlay: certTooltip}, 
+										React.createElement("i", {id: "mongo-star", className: "fa fa-star-o fa-lg", "aria-hidden": "true"})
+									)
+								), React.createElement("br", null), 
+							"Node.js", React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'node', 50), bsStyle: "warning", now: this.state.progressValues.node, label: `${this.state.progressValues.node}%`}), React.createElement("br", null), 
+							"Java", React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'java', 50), bsStyle: "warning", now: this.state.progressValues.java, label: `${this.state.progressValues.java}%`}), React.createElement("br", null)
 						)
+						
 					), 
 					React.createElement("div", {className: "col-sm-6 text-left"}, 
-						React.createElement("div", {className: "col-md-12", id: "cert-box"}, 
+					
+						React.createElement("div", {id: "cert-box"}, 
 							React.createElement("h2", null, "Certificates"), 
 							React.createElement("a", {href: "./public/data/certificates/mongodbcert.pdf", target: "_blank"}, 
 								React.createElement(Button, null, React.createElement("i", {className: "fa fa-leaf fa-fw"}), " MongoDB for Node.js Developers")
@@ -37032,6 +37180,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 								React.createElement(Button, null, React.createElement("i", {className: "fa fa-graduation-cap fa-fw"}), " Edward Cheung")
 							)
 						)
+						
 					)
 				)				
 			)
