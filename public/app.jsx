@@ -229,7 +229,6 @@ var IntroBox = React.createClass({
 							<h3>My name is Ed. I'm a self-taught full-stack developer and tech aficionado.</h3><br/>
 							<p><i>
 							I love innovation and being on the forefront of groundbreaking technology. 
-							Spotting inefficient processes and developing revamped, streamlined systems is my forté.
 							Building and creating, virtually or physically, is my passion.</i>
 							<br/><br/>
 							While working as a structural engineer, I was tasked to perform repeated structural analyses with slight parameter changes between each one. 
