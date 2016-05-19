@@ -37140,7 +37140,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 							React.createElement("br", null), React.createElement("br", null), 
 							"I began my programming journey by working through courses offered on Codecademy, but quickly exhausted the introductory material." + ' ' + 
 							"With the goal of further developing my programming fundamentals, I enrolled and completed a 12-week Java course in ", React.createElement("b", null, "Object-Oriented Programming"), ", learning concepts that are applicable for any languages." + ' ' + 
-							"Currently, I am working through the ", React.createElement("b", null, "Full-Stack Developer"), " curriculum offered through FreeCodeCamp, having completed the ", React.createElement("b", null, "Front-End Developer"), " certification and portions of the ", React.createElement("b", null, "Back-End Developer"), " and ", React.createElement("b", null, "Data Visualization"), " certifications." + ' ' + 
+							"Currently, I am working through the ", React.createElement("b", null, "Full-Stack Developer"), " curriculum offered through FreeCodeCamp, having completed the ", React.createElement("b", null, "Front-End Developer"), " certification and a majority of the projects in the ", React.createElement("b", null, "Back-End Developer"), " and ", React.createElement("b", null, "Data Visualization"), " certifications." + ' ' + 
 							"Many of the projects I've completed for these courses can be found in my portfolio below.", 
 							React.createElement("br", null), React.createElement("br", null), 
 							"By combining my engineering background and industry work experience, I can bring a unique and powerful perspective to a software firm looking for a self-motivated and forward-thinking developer." + ' ' +
