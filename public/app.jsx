@@ -253,24 +253,24 @@ var IntroBox = React.createClass({
 						<div id="skills-box">
 							<h2>Skills</h2>
 							HTML/CSS/Bootstrap<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'html', 90)} bsStyle="success" now={this.state.progressValues.html} label={`${this.state.progressValues.html}%`}/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'html', 90)} bsStyle="success" now={this.state.progressValues.html} label="Advanced"/><br/>
 							Javascript<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'javascript', 85)} bsStyle="success" now={this.state.progressValues.javascript} label={`${this.state.progressValues.javascript}%`}/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'javascript', 85)} bsStyle="success" now={this.state.progressValues.javascript} label="Advanced"/><br/>
 							React.js<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'react', 85)} bsStyle="success" now={this.state.progressValues.react} label={`${this.state.progressValues.react}%`}/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'react', 85)} bsStyle="success" now={this.state.progressValues.react} label="Advanced"/><br/>
 							D3.js<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'d3', 70)} bsStyle="info" now={this.state.progressValues.d3} label={`${this.state.progressValues.d3}%`}/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'d3', 70)} bsStyle="info" now={this.state.progressValues.d3} label="Intermediate"/><br/>
 							MongoDB<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'mongo', 80)} bsStyle="info" now={this.state.progressValues.mongo} label={`${this.state.progressValues.mongo}%`}/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'mongo', 80)} bsStyle="info" now={this.state.progressValues.mongo} label="Intermediate"/>
 								<div className="progress-icon">
 									<OverlayTrigger placement="top" overlay={certTooltip}>
 										<i id="mongo-star" className="fa fa-star-o fa-lg" aria-hidden="true"></i>
 									</OverlayTrigger>
 								</div><br/>
 							Node.js<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'node', 50)} bsStyle="warning" now={this.state.progressValues.node} label={`${this.state.progressValues.node}%`}/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'node', 50)} bsStyle="warning" now={this.state.progressValues.node} label="Basic"/><br/>
 							Java<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'java', 60)} bsStyle="warning" now={this.state.progressValues.java} label={`${this.state.progressValues.java}%`}/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'java', 60)} bsStyle="warning" now={this.state.progressValues.java} label="Basic"/><br/>
 						</div>
 					
 						<div id="cert-box">
