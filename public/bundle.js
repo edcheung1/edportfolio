@@ -37175,6 +37175,9 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 					
 						React.createElement("div", {id: "cert-box"}, 
 							React.createElement("h2", null, "Certificates"), 
+							React.createElement("a", {href: "https://university.mongodb.com/exams/display_certificate?license1=194&license2=791&license3=790", target: "_blank"}, 
+								React.createElement(Button, null, React.createElement("i", {className: "fa fa-leaf fa-fw"}), " MongoDB Certified Developer Associate")
+							), React.createElement("br", null), React.createElement("br", null), 
 							React.createElement("a", {href: "./public/data/certificates/mongodbcert.pdf", target: "_blank"}, 
 								React.createElement(Button, null, React.createElement("i", {className: "fa fa-leaf fa-fw"}), " MongoDB for Node.js Developers")
 							), React.createElement("br", null), React.createElement("br", null), 

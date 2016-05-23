@@ -274,6 +274,9 @@ var IntroBox = React.createClass({
 					
 						<div id="cert-box">
 							<h2>Certificates</h2>
+							<a href="https://university.mongodb.com/exams/display_certificate?license1=194&license2=791&license3=790" target="_blank">
+								<Button><i className="fa fa-leaf fa-fw" />&nbsp;MongoDB Certified Developer Associate</Button>
+							</a><br/><br/>
 							<a href="./public/data/certificates/mongodbcert.pdf" target="_blank">
 								<Button><i className="fa fa-leaf fa-fw" />&nbsp;MongoDB for Node.js Developers</Button>
 							</a><br/><br/>
