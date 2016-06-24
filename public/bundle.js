@@ -37143,7 +37143,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 							"Many of the projects I've completed for these courses can be found in my portfolio below.", 
 							React.createElement("br", null), React.createElement("br", null), 
 							"By combining my engineering background and industry work experience, I can bring a unique and powerful perspective to a software firm looking for a self-motivated and forward-thinking developer." + ' ' +
-							"I will be relocating to Seattle, WA and am open to any developer opportunities in the area or remotely."
+							"I am located in Seattle, WA and am open to any developer opportunities in the area or remotely."
 							)
 						)
 						
@@ -37153,15 +37153,15 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 						React.createElement("div", {id: "skills-box"}, 
 							React.createElement("h2", null, "Skills"), 
 							"HTML/CSS/Bootstrap", React.createElement("br", null), 
-								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'html', 90), bsStyle: "success", now: this.state.progressValues.html, label: "Advanced"}), React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'html', 80), bsStyle: "success", now: this.state.progressValues.html, label: "Advanced"}), React.createElement("br", null), 
 							"Javascript", React.createElement("br", null), 
-								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'javascript', 85), bsStyle: "success", now: this.state.progressValues.javascript, label: "Advanced"}), React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'javascript', 75), bsStyle: "success", now: this.state.progressValues.javascript, label: "Advanced"}), React.createElement("br", null), 
 							"React.js", React.createElement("br", null), 
-								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'react', 85), bsStyle: "success", now: this.state.progressValues.react, label: "Advanced"}), React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'react', 75), bsStyle: "success", now: this.state.progressValues.react, label: "Advanced"}), React.createElement("br", null), 
 							"D3.js", React.createElement("br", null), 
-								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'d3', 70), bsStyle: "info", now: this.state.progressValues.d3, label: "Intermediate"}), React.createElement("br", null), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'d3', 60), bsStyle: "info", now: this.state.progressValues.d3, label: "Intermediate"}), React.createElement("br", null), 
 							"MongoDB", React.createElement("br", null), 
-								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'mongo', 80), bsStyle: "info", now: this.state.progressValues.mongo, label: "Intermediate"}), 
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'mongo', 65), bsStyle: "info", now: this.state.progressValues.mongo, label: "Intermediate"}), 
 								React.createElement("div", {className: "progress-icon"}, 
 									React.createElement(OverlayTrigger, {placement: "top", overlay: certTooltip}, 
 										React.createElement("i", {id: "mongo-star", className: "fa fa-star-o fa-lg", "aria-hidden": "true"})
@@ -37170,7 +37170,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 							"Node.js", React.createElement("br", null), 
 								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'node', 50), bsStyle: "warning", now: this.state.progressValues.node, label: "Basic"}), React.createElement("br", null), 
 							"Java", React.createElement("br", null), 
-								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'java', 60), bsStyle: "warning", now: this.state.progressValues.java, label: "Basic"}), React.createElement("br", null)
+								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'java', 55), bsStyle: "warning", now: this.state.progressValues.java, label: "Basic"}), React.createElement("br", null)
 						), 
 					
 						React.createElement("div", {id: "cert-box"}, 
