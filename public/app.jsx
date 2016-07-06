@@ -226,20 +226,21 @@ var IntroBox = React.createClass({
 						
 						<div id="hello-box">
 							<h2>Hello!</h2>
-							<h3>My name is Ed. I'm a self-taught full-stack developer and tech aficionado.</h3><br/>
+							<h3>My name is Ed. I'm a full-stack developer and tech aficionado.</h3><br/>
 							<p><i>
 							I love innovation and being on the forefront of groundbreaking technology. 
 							Building and creating, virtually or physically, is my passion.</i>
 							<br/><br/>
-							While working as a structural engineer, I was tasked to perform repeated structural analyses with slight parameter changes between each one. 
+							I am a programmer with a non-traditional background. 
+							My coding journey began in my previous role as a structural engineer, where I was tasked to perform repeated structural analyses. 
 							Not wanting to perform monotonous work, I began tinkering with ways to automate the process with the tool available to me at the time: Excel VBA. 
-							I taught myself the ins and outs of the language and I was able to script many of the tedious and non-value-adding portions of my work. 
-							Along the way, I discovered my passion for coding.
+							After learning the ins and outs of the language, I was able to script many of the tedious and non-value-adding portions of my work. 
+							Along the way, I discovered my passion for coding and decided to pursue programming as a profession.
 							<br/><br/>
-							I began my programming journey by working through courses offered on Codecademy, but quickly exhausted the introductory material. 
-							With the goal of further developing my programming fundamentals, I enrolled and completed a 12-week Java course in <b>Object-Oriented Programming</b>, learning concepts that are applicable for any languages. 
+							To complete the switch, I needed to develop my programming fundamentals - I completed a 12-week Java course in <b>Object-Oriented Programming</b>, learning principles that are applicable for any language. 
+							In addition, I completed the MongoDB for Node.js Developers course and acquired MongoDB Developer Associate certification. 
 							Currently, I am working through the <b>Full-Stack Developer</b> curriculum offered through FreeCodeCamp, having completed the <b>Front-End Developer</b> certification and a majority of the projects in the <b>Back-End Developer</b> and <b>Data Visualization</b> certifications. 
-							Many of the projects I've completed for these courses can be found in my portfolio below.
+							Many of these projects can be found in my portfolio below.
 							<br/><br/> 
 							By combining my engineering background and industry work experience, I can bring a unique and powerful perspective to a software firm looking for a self-motivated and forward-thinking developer.
 							I am located in Seattle, WA and am open to any developer opportunities in the area or remotely.
