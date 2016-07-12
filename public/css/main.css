@@ -300,6 +300,12 @@ h1 {
   top: 5em;
 }
 
+@media screen and (min-width: 768px) {
+	.modal-dialog {
+	  width:650px;
+	}
+}
+
 .modal-header {
   font-size: 18px;
   font-weight: bold;

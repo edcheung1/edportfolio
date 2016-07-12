@@ -36981,7 +36981,7 @@ var AboutBox = React.createClass({displayName: "AboutBox",
             React.createElement("h1", null, "ED CHEUNG")
           ), 
           React.createElement("div", {id: "profile"}, 
-            React.createElement("img", {src: "/public/img/self.jpg", id: "profile-pic"}), 
+            React.createElement("img", {src: "https://res.cloudinary.com/edcheung/image/upload/c_crop,h_1400,w_1400,x_1415,y_140/v1458272643/Ed_Self_n6tf30.jpg", id: "profile-pic"}), 
             React.createElement("div", {className: "fa fa-cogs fa-lg", id: "profile-icon"})
           ), 
           React.createElement("h3", null, 
