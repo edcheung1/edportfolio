@@ -80,7 +80,7 @@ var AboutBox = React.createClass({
             <h1>ED CHEUNG</h1>
           </div>
           <div id='profile'>
-            <img src='https://res.cloudinary.com/edcheung/image/upload/c_crop,h_1400,w_1400,x_1415,y_140/v1458272643/Ed_Self_n6tf30.jpg' id='profile-pic' />
+            <img src='/public/img/self.jpg' id='profile-pic' />
             <div className="fa fa-cogs fa-lg" id='profile-icon'></div>
           </div>
           <h3>
