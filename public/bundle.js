@@ -37003,13 +37003,13 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 	getInitialState: function() {
 		return {
 			progressValues: {
-				html: 0,
-				javascript: 0,
-				react: 0,
-				d3: 0,
-				mongo: 0,
-				node: 0,
-				java: 0
+				html: 80,
+				javascript: 80,
+				react: 85,
+				d3: 60,
+				mongo: 65,
+				node: 50,
+				java: 55
 			}
 		}
 	},
@@ -37165,7 +37165,7 @@ var IntroBox = React.createClass({displayName: "IntroBox",
 								React.createElement(ProgressBar, {striped: true, onMouseOver: this.fillProgressBar.bind(null,'mongo', 65), bsStyle: "info", now: this.state.progressValues.mongo, label: "Intermediate"}), 
 								React.createElement("div", {className: "progress-icon"}, 
 									React.createElement(OverlayTrigger, {placement: "top", overlay: certTooltip}, 
-										React.createElement("i", {id: "mongo-star", className: "fa fa-star-o fa-lg", "aria-hidden": "true"})
+										React.createElement("i", {id: "mongo-star", className: "fa fa-star gold fa-lg", "aria-hidden": "true"})
 									)
 								), React.createElement("br", null), 
 							"Node.js", React.createElement("br", null), 

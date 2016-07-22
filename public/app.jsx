@@ -102,13 +102,13 @@ var IntroBox = React.createClass({
 	getInitialState: function() {
 		return {
 			progressValues: {
-				html: 0,
-				javascript: 0,
-				react: 0,
-				d3: 0,
-				mongo: 0,
-				node: 0,
-				java: 0
+				html: 80,
+				javascript: 80,
+				react: 85,
+				d3: 60,
+				mongo: 65,
+				node: 50,
+				java: 55
 			}
 		}
 	},
@@ -264,7 +264,7 @@ var IntroBox = React.createClass({
 								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'mongo', 65)} bsStyle="info" now={this.state.progressValues.mongo} label="Intermediate"/>
 								<div className="progress-icon">
 									<OverlayTrigger placement="top" overlay={certTooltip}>
-										<i id="mongo-star" className="fa fa-star-o fa-lg" aria-hidden="true"></i>
+										<i id="mongo-star" className="fa fa-star gold fa-lg" aria-hidden="true"></i>
 									</OverlayTrigger>
 								</div><br/>
 							Node.js<br/>
