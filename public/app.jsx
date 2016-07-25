@@ -256,7 +256,7 @@ var IntroBox = React.createClass({
 								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'html', 80)} bsStyle="success" now={this.state.progressValues.html} label="Advanced"/><br/>
 							Javascript<br/>
 								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'javascript', 75)} bsStyle="success" now={this.state.progressValues.javascript} label="Advanced"/><br/>
-							React.js<br/>
+							React.js/Flux/Redux<br/>
 								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'react', 75)} bsStyle="success" now={this.state.progressValues.react} label="Advanced"/><br/>
 							D3.js<br/>
 								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'d3', 60)} bsStyle="info" now={this.state.progressValues.d3} label="Intermediate"/><br/>
