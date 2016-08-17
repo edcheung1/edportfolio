@@ -102,13 +102,14 @@ var IntroBox = React.createClass({
 	getInitialState: function() {
 		return {
 			progressValues: {
-				html: 80,
-				javascript: 80,
-				react: 85,
-				d3: 60,
-				mongo: 65,
-				node: 50,
-				java: 55
+				html: 90,
+				javascript: 90,
+				react: 95,
+				d3: 70,
+				mongo: 75,
+				node: 70,
+				java: 65,
+				reactnative: 60
 			}
 		}
 	},
@@ -211,6 +212,19 @@ var IntroBox = React.createClass({
 					});
 				}.bind(this), waitProgress);
 				break;
+			case 'reactnative':
+				if(this.state.progressValues.reactnative == 0) waitProgress = 0;
+				newProgressValues.reactnative = 0;
+				this.setState({
+					progressValues: newProgressValues
+				});
+				setTimeout(function() {
+					newProgressValues.reactnative = value;
+					this.setState({
+						progressValues: newProgressValues
+					});
+				}.bind(this), waitProgress);
+				break;
 		}
 		
 	},
@@ -253,24 +267,26 @@ var IntroBox = React.createClass({
 						<div id="skills-box">
 							<h2>Skills</h2>
 							HTML/CSS/Bootstrap<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'html', 80)} bsStyle="success" now={this.state.progressValues.html} label="Advanced"/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'html', 90)} bsStyle="success" now={this.state.progressValues.html} label="Advanced"/><br/>
 							Javascript<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'javascript', 75)} bsStyle="success" now={this.state.progressValues.javascript} label="Advanced"/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'javascript', 90)} bsStyle="success" now={this.state.progressValues.javascript} label="Advanced"/><br/>
 							React.js/Flux/Redux<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'react', 75)} bsStyle="success" now={this.state.progressValues.react} label="Advanced"/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'react', 95)} bsStyle="success" now={this.state.progressValues.react} label="Advanced"/><br/>
 							D3.js<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'d3', 60)} bsStyle="info" now={this.state.progressValues.d3} label="Intermediate"/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'d3', 70)} bsStyle="info" now={this.state.progressValues.d3} label="Intermediate"/><br/>
 							MongoDB<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'mongo', 65)} bsStyle="info" now={this.state.progressValues.mongo} label="Intermediate"/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'mongo', 75)} bsStyle="info" now={this.state.progressValues.mongo} label="Intermediate"/>
 								<div className="progress-icon">
 									<OverlayTrigger placement="top" overlay={certTooltip}>
 										<i id="mongo-star" className="fa fa-star gold fa-lg" aria-hidden="true"></i>
 									</OverlayTrigger>
 								</div><br/>
 							Node.js<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'node', 50)} bsStyle="warning" now={this.state.progressValues.node} label="Basic"/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'node', 70)} bsStyle="info" now={this.state.progressValues.node} label="Intermediate"/><br/>
 							Java<br/>
-								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'java', 55)} bsStyle="warning" now={this.state.progressValues.java} label="Basic"/><br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'java', 65)} bsStyle="warning" now={this.state.progressValues.java} label="Basic"/><br/>
+							React-Native<br/>
+								<ProgressBar striped onMouseOver={this.fillProgressBar.bind(null,'reactnative', 60)} bsStyle="warning" now={this.state.progressValues.reactnative} label="Basic"/><br/>
 						</div>
 					
 						<div id="cert-box">
